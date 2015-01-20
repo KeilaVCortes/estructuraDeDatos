@@ -1,6 +1,7 @@
 /*
 19/01/14
 Ejercicio recursividad
+Ejercicios 1 y 2
 */
 #include <iostream>
 #include <string>
