@@ -33,10 +33,10 @@ int main(){
 int suma(int fila, int columna, int mat[n][m]){
     if(fila == 0 && columna ==0){
         return mat[fila][columna];
-    }else if (fila == 0){
+    }else if (columna == 0){
         return mat[fila][columna] + suma(fila-1, m-1, mat);
     }else{
-        return mat[fila][columna] + suma(fila-1, columna-1, mat);
+        return mat[fila][columna] + suma(fila, columna-1, mat);
     }
 }
 
