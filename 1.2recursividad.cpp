@@ -21,7 +21,7 @@ int main(){
             mat[i][j] =  5;
         }
     }
-    suma(n , m , mat);
+    cout << suma(n , m , mat);
     return 0;
 }    
    

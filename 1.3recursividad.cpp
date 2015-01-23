@@ -2,7 +2,7 @@
 Margot Duek
 19/01/14
 Ejercicio recursividad
-Ejercicio 4 y 5
+Ejercicio 4, 5 y 6
 */
 
 #include<iostream>
