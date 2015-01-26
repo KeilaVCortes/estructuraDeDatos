@@ -6,15 +6,28 @@ en donde N puede ser el valor de cualquier número.
 */
 
 #include <iostream>
+#include <string>
 #include <stdlib.h>
+
+
+#define n 5
+#define N 5
+#define M 5
 
 using namespace std;
 
+void imprimeMatriz(int m[][M]);
+int llenaMatriz(int matriz[][n], int num);
 
-//int llenaMatriz(int matriz[nu][nu], int nu);
 
 int main(){
-    int nu;
+    int nu ;
+
+    
+    
+    cout << "De cuantos elementos quieres tu matriz?" << endl;
+    cin >> nu;
+    
     int matriz[nu][nu];
     
     for (int i = 0; i < nu; ++i) {
@@ -23,27 +36,29 @@ int main(){
         }
     }
     
-    cout << "De cuantos elementos quieres tu matriz?" << endl;
-    cin >> nu;
-    
    
-    //cout << llenaMatriz(matriz, nu) << endl;
+    cout << llenaMatriz(matriz, nu) << endl;
+    imprimeMatriz(matriz);
     return 0;
 }
 
-int llenaMatriz(int matriz[nu][nu], int nu){
-    //int matriz[n][n];
-    
-    if(nu == 1){
-        return matriz[nu][nu];
-    }else{
-        return llenaMatriz(matriz[nu*2][nu*2], nu);
+
+int llenaMatriz(int mat[][n], int num){
+    for(int i = 0; i < n; i++){
+        for(int j = 0; j < n; j++){
+            if(i == num || j == num){
+                mat[i][j] = num;
+            }else{
+                return llenaMatriz(mat, num+1);
+            }
+        }
     }
 }
 
-/*
 
-void imprimeMatriz(int m[N][M])
+//Funcion para imprimir matrices
+//Creada por V. Cubells
+void imprimeMatriz(int m[][M])
 {
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < M; ++j) {
@@ -52,17 +67,3 @@ void imprimeMatriz(int m[N][M])
         std::cout << std::endl;
     }
 }
-
-int sumaMatriz(int m[N][M], int f, int c)
-{
-    if (f == 0 && c == 0) {
-        return m[f][c];
-    }
-    else if (c == 0) {
-        return m[f][c] + sumaMatriz(m, f-1, M-1);
-    }
-    else {
-        return m[f][c] + sumaMatriz(m, f, c-1);
-    }
-}
-*/
