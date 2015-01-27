@@ -11,57 +11,44 @@ en donde N puede ser el valor de cualquier número.
 
 
 #define n 5
-#define N 5
-#define M 5
+
 
 using namespace std;
 
-void imprimeMatriz(int m[][M]);
-int llenaMatriz(int matriz[][n], int num);
+void imprimeMatriz(int m[n][n]);
+int llenaMatriz(int matriz[n][n], int num);
 
 
 int main(){
-    int nu ;
-
+   
     
+    int matriz[n][n];
     
-    cout << "De cuantos elementos quieres tu matriz?" << endl;
-    cin >> nu;
-    
-    int matriz[nu][nu];
-    
-    for (int i = 0; i < nu; ++i) {
-        for (int j = 0; j < nu; ++j) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             matriz[i][j] = rand() % 5;
         }
     }
     
    
-    cout << llenaMatriz(matriz, nu) << endl;
+    llenaMatriz(matriz, 0);
     imprimeMatriz(matriz);
     return 0;
 }
 
 
-int llenaMatriz(int mat[][n], int num){
-    for(int i = 0; i < n; i++){
-        for(int j = 0; j < n; j++){
-            if(i == num || j == num){
-                mat[i][j] = num;
-            }else{
-                return llenaMatriz(mat, num+1);
-            }
-        }
-    }
+int llenaMatriz(int mat[n][n], int num){
+   
+
 }
 
 
 //Funcion para imprimir matrices
 //Creada por V. Cubells
-void imprimeMatriz(int m[][M])
+void imprimeMatriz(int m[n][n])
 {
-    for (int i = 0; i < N; ++i) {
-        for (int j = 0; j < M; ++j) {
+    for (int i = 0; i < n; ++i) {
+        for (int j = 0; j < n; ++j) {
             std::cout << m[i][j] << "\t";
         }
         std::cout << std::endl;
