@@ -8,6 +8,7 @@ en donde N puede ser el valor de cualquier número.
 #include <iostream>
 #include <string>
 #include <stdlib.h>
+#include<math.h>
 
 
 #define n 5
@@ -16,7 +17,7 @@ en donde N puede ser el valor de cualquier número.
 using namespace std;
 
 void imprimeMatriz(int m[n][n]);
-int llenaMatriz(int matriz[n][n], int num);
+int llenaMatriz(int matriz[n][n], int tam, int num, int i, int j);
 
 
 int main(){
@@ -31,14 +32,24 @@ int main(){
     }
     
    
-    llenaMatriz(matriz, 0);
+    llenaMatriz(matriz, n, 0, 0,0);
     imprimeMatriz(matriz);
     return 0;
 }
 
 
-int llenaMatriz(int mat[n][n], int num){
-   
+int llenaMatriz(int mat[n][n], int tam, int num, int i, int j){
+   if(j <= i && i < tam){
+       mat[j][i] = pow(2,j);
+       return llenaMatriz(mat, tam, num, i+1, j );
+   } else if(j > i && i < tam){
+       mat[j][i] = pow(2,i);
+       return llenaMatriz(mat, tam, num, i+1, j);
+   }else if(j < tam){
+       return llenaMatriz(mat, tam, num, 0, j+1);
+   }else{
+       cout << "camara" << endl;
+   }
 
 }
 
