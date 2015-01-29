@@ -11,7 +11,7 @@ en donde N puede ser el valor de cualquier número.
 #include<math.h>
 
 
-#define n 5
+#define n 15
 
 
 using namespace std;
