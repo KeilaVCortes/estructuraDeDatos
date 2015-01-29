@@ -35,6 +35,12 @@ int main(){
     buscaCamino(mat, 0,0);
     imprimeMatriz(mat);
     
+    if (mat[n][m] == 3){
+        cout << "Camino exitoso!" << endl;
+    }else{
+        cout << "Lo sentimos, no exite camino" << endl;
+    }
+    
     return 0;
 }
 
@@ -63,13 +69,17 @@ int buscaCamino(int mat[n][m], int i, int j){
             if(mat[i+1][j-1] == 0){
                 return buscaCamino(mat, i+1, j-1);
             }else{
+                
                 return buscaCamino(mat,0,0);
             }
         }
     }else if(j < n){
-        return buscaCamino(mat, i, 0);
+        if(mat[i][j+1] == 0){
+            return buscaCamino(mat, i, j+1);
+        }else{
+            return buscaCamino(mat, i, 0);    
+        }
+        
     }
-    
-    
-    
+ 
 }
