@@ -58,16 +58,16 @@ int buscaCamino(int mat[n][m], int i, int j){
     if(i < n && j < m){
         if(mat[i][j] == 0){
             mat[i][j] = 3;
-            return buscaCamino(mat, i+1, j);
+            return buscaCamino(mat, i, j+1);
         }else if(mat[i][j] == 1){
-            if(mat[i-1][j+1] == 0){
-                return buscaCamino(mat, i, j+1);
+            if(mat[i+1][j-1] == 0){
+                return buscaCamino(mat, i+1, j-1);
             }else{
                 return buscaCamino(mat,0,0);
             }
         }
-    }else if(i < n){
-        return buscaCamino(mat, 0, j);
+    }else if(j < n){
+        return buscaCamino(mat, i, 0);
     }
     
     
