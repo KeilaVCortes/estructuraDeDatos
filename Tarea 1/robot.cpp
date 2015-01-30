@@ -12,7 +12,7 @@ Algoritmo de una funcion recursiva que permita a un robot moverse.
 
 using namespace std;
 
-int ajedrez(int mat[n][m], int i, int j, int cont);
+void buscaCamino(int mat[n][m], int i, int j, int cont);
 void imprimeMatriz(int mat[n][m]);
 
 int main(){
@@ -24,8 +24,8 @@ int main(){
         }
     }
     
-    ajedrez(mat,0,0,1);
-    imprimeMatriz(mat);
+    buscaCamino(mat,0,0,1);
+    
 
     return 0;
 }
@@ -36,6 +36,18 @@ int ajedrez(int mat[n][m], int i, int j, int cont){
         return(mat, i+3, j+2,cont+1);
         cout << cont;
     }
+}
+
+void buscaCamino(int mat[n][m], int i, int j, int cont){
+    if(mat[i][j] == 0 && i < n && j < n){
+        mat[i][j] = 3;
+        if(mat[n-1][m-1] == 3){
+            cont++;
+        }
+        buscaCamino(mat, i, j+3, cont);
+        buscaCamino(mat, i+1,2,cont);
+    }
+    cout << cont << endl;
 }
 
 
