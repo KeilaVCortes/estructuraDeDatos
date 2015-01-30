@@ -9,11 +9,12 @@ de N x N, donde N puede ser cualquier número.
 #include<string>
 #include<cstdlib>
 #define n 6
-#define m 7
+#define m 6
 using namespace std;
 
 void imprimeMatriz(int mat[n][m]);
 int buscaCamino(int mat[n][m], int i, int j);
+void buscaCamino2(int mat[n][m], int i, int j);
 
 
 int main(){
@@ -22,7 +23,7 @@ int main(){
     for (int i = 0; i < n; ++i) {
         for (int j = 0; j < m; ++j) {
             mat[i][j] = rand() % 9;
-            if(mat[i][j] < 7){
+            if(mat[i][j] < 6){
                 mat[i][j] = 0;    
             }else{
                 mat[i][j] = 1;
@@ -32,10 +33,12 @@ int main(){
     }
     
     imprimeMatriz(mat);
-    buscaCamino(mat, 0,0);
+    /*buscaCamino(mat, 0,0);
+    imprimeMatriz(mat);*/
+    buscaCamino2(mat, 0, 0);
     imprimeMatriz(mat);
     
-    if (mat[n][m] == 3){
+    if (mat[n-1][m-1] == 3){
         cout << "Camino exitoso!" << endl;
     }else{
         cout << "Lo sentimos, no exite camino" << endl;
@@ -82,4 +85,13 @@ int buscaCamino(int mat[n][m], int i, int j){
         
     }
  
+}
+
+
+void buscaCamino2(int mat[n][m], int i, int j){
+    if(mat[i][j] == 0 && i < n && j < n){
+        mat[i][j] = 3;
+        buscaCamino2(mat, i, j+1);
+        buscaCamino2(mat, i+1, j);
+    }
 }
