@@ -25,6 +25,7 @@ Apuntadores a funciones o funcion Lamda o inline o anonima:
 
 
 #include<iostream>
+#pragma once
 
 template<class T>
 class Ordenamiento{
@@ -66,25 +67,35 @@ void Ordenamiento<T>::burbuja(T v[], int n, bool compara(T, T)){
 template<class T>
 void Ordenamiento<T>::insercion(T v[], int n, bool compara(T, T)){
     T index;
-    int j = i-1;
-    while (j >= 0 && compara(v[j], index)){
-        v[j+1] = v[j];
-        j--;
-    }
+    for(int i = 1 ; i < n ; i++){
+        index = v[i];
+        int j = i-1;
+        
+        while (j >= 0 && compara(v[j], index)){
+            v[j+1] = v[j];
+            j--;
+        }
+    
     v[j+1]= index;
+    }
 }
 
 template<class T>
 void Ordenamiento<T>::seleccion(T v[], int n, bool compara (T, T)){
     int minimo = 0;
-    for(int j = i+1; j < n; j++){
-        if(compara(v[minimo], v[j])){
-            minimo = j;
+    T temp;
+    
+    for(int i = 0; i < n-1; i++){
+        minimo = i;
+        for(int j = i+1; j < n; j++){
+            if(compara(v[minimo], v[j])){
+                minimo = j;
+            }
         }
+        temp = v[minimo];
+        v[minimo] = v[i];
+        v[i] = temp;
     }
-    temp = v[minimo];
-    v[minimo] = v[i];
-    v[i] = temp;
 }
 
 
