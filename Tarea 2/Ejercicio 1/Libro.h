@@ -1,6 +1,8 @@
 #pragma once
 #include<iostream>
 #include<string>
+#include<ostream>
+using namespace std;
 
 class Libro{
     private:
@@ -12,12 +14,13 @@ class Libro{
         int anio;
     public:
         Libro();
-        Libro(string, string, int, int, srting, int);
+        Libro(string, string, int, int, string, int);
         void nuevoLibro(Libro);
         void borrarLibro(Libro);
-        Libro antesDeFecha(int anio);
-        Libro despuesDeFecha(int anio);
-        Libro periodo(int anio, int anio);
-        Libro porAutor(string autor);
-        Libro porEditorial(string editorial);
+        
+        bool operator<(Libro &);
+        bool operator>(Libro &);
+        bool operator==(Libro &);
+        
+        friend ostream & operator <<(ostream &, Libro &);
 };
