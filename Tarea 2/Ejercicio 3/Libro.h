@@ -18,6 +18,16 @@ class Libro{
         void nuevoLibro(Libro);
         void borrarLibro(Libro);
         
+        string gettitulo(){
+            return titulo;
+        }
+        int getEdicion(){
+            return edicion;
+        }
+        int getAnio(){
+            return anio;
+        }
+        
         bool operator<(Libro &);
         bool operator>(Libro &);
         bool operator==(Libro &);

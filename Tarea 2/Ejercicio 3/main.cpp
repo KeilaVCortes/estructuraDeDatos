@@ -1,5 +1,7 @@
 #include "Libro.h"
 #include "Orden.h"
+#include<iostream>
+#include<string>
 using namespace std;
 
 template<typename T>
@@ -20,7 +22,7 @@ int main(){
     imprimeArreglo<Libro>(biblio, nLibros);
     
     int opi = 1;
-    cout << "ordenar por\n 1.- titulo\n 2.- año\n 3.- edicion\n" << endl;
+    cout << "ordenar por\n 1.- titulo\n 2.- edicion\n 3.- año\n" << endl;
     cin >> opi;
     switch(opi){
         case 1:{
@@ -29,28 +31,28 @@ int main(){
             cin >> opa;
             switch(opa){
                 case 1:
-                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::burbuja(biblio, tamanio, [](Libro a, Libro b){return a.gettitulo() < b.gettitulo();});
                 break;
                 case 2:
-                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::insercion(biblio, tamanio, [](Libro a, Libro b){return a.gettitulo() < b.gettitulo();});
                 break;
                 case 3:
-                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::seleccion(biblio, tamanio, [](Libro a, Libro b){return a.gettitulo() < b.gettitulo();});
                 break;
                 case 4:
-                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::burbuja(biblio, tamanio, [](Libro a, Libro b){return a.gettitulo() > b.gettitulo();});
                 break;
                 case 5:
-                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::insercion(biblio, tamanio, [](Libro a, Libro b){return a.gettitulo() > b.gettitulo();});
                 break;
                 case 6:
-                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::seleccion(biblio, tamanio, [](Libro a, Libro b){return a.gettitulo() > b.gettitulo();});
                 break;
                 default:
                     cout << "pon una opciomn existente\n\n\n";
                 break;
             }
-        
+            imprimeArreglo<Libro>(biblio, nLibros);
         break;}
         case 2:{
             int ope = 1;
@@ -58,27 +60,28 @@ int main(){
             cin >> ope;
             switch(ope){
                 case 1:
-                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::burbuja(biblio, tamanio, [](Libro a, Libro b){return a.getEdicion() < b.getEdicion();});
                 break;
                 case 2:
-                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::insercion(biblio, tamanio, [](Libro a, Libro b){return a.getEdicion() < b.getEdicion();});
                 break;
                 case 3:
-                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::seleccion(biblio, tamanio, [](Libro a, Libro b){return a.getEdicion() < b.getEdicion();});
                 break;
                 case 4:
-                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::burbuja(biblio, tamanio,[](Libro a, Libro b){return a.getEdicion() > b.getEdicion();});
                 break;
                 case 5:
-                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::insercion(biblio, tamanio,  [](Libro a, Libro b){return a.getEdicion() > b.getEdicion();});
                 break;
                 case 6:
-                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::seleccion(biblio, tamanio,  [](Libro a, Libro b){return a.getEdicion() > b.getEdicion();});
                 break;
                 default:
                     cout << "pon una opciomn existente\n\n\n";
                 break;
             }
+            imprimeArreglo<Libro>(biblio, nLibros);
         break;}
         case 3:{
             int opo = 1;
@@ -86,27 +89,28 @@ int main(){
             cin >> opo;
             switch(opo){
                 case 1:
-                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::burbuja(biblio, tamanio,  [](Libro a, Libro b){return a.getAnio() < b.getAnio();});
                 break;
                 case 2:
-                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::insercion(biblio, tamanio, [](Libro a, Libro b){return a.getAnio() < b.getAnio();});
                 break;
                 case 3:
-                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::desc);
+                    Orden<Libro>::seleccion(biblio, tamanio, [](Libro a, Libro b){return a.getAnio() < b.getAnio();});
                 break;
                 case 4:
-                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::burbuja(biblio, tamanio, [](Libro a, Libro b){return a.getAnio() > b.getAnio();});
                 break;
                 case 5:
-                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::insercion(biblio, tamanio, [](Libro a, Libro b){return a.getAnio() > b.getAnio();});
                 break;
                 case 6:
-                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::asc);
+                    Orden<Libro>::seleccion(biblio, tamanio, [](Libro a, Libro b){return a.getAnio() > b.getAnio();});
                 break;
                 default:
                     cout << "pon una opciomn existente\n\n\n";
                 break;
             }
+            imprimeArreglo<Libro>(biblio, nLibros);
         break;}
         default:
             cout << "pon op valida" << endl;

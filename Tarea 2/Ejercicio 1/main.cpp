@@ -17,7 +17,10 @@ int main(){
     biblio[2] = Libro("camara ", "camarilla", 854, 3 , "Editorial", 2010);
     biblio[3] = Libro("Har ", "JK ", 9, 3, "Editorial Editores", 555);
     biblio[4] = Libro("Crepus P ", "Alguien mas", 1254, 1, "l Editores", 1560);
-   
+    
+    
+    
+    
     imprimeArreglo<Libro>(biblio, nLibros);
     return 0;
 }

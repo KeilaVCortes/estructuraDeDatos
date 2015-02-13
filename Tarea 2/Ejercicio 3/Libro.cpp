@@ -23,7 +23,7 @@ bool Libro::operator==(Libro & libro){
 }
 
 ostream & operator <<(ostream & os, Libro & libro){
-    os << libro.titulo << endl;
+    os << libro.titulo << "  " << libro.anio << "  " << libro.edicion << endl;
     return os;
 }
 
