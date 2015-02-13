@@ -18,7 +18,9 @@ int main(){
     biblio[3] = Libro("Har ", "JK ", 9, 3, "Editorial Editores", 555);
     biblio[4] = Libro("Crepus P ", "Alguien mas", 1254, 1, "l Editores", 1560);
     
-    
+    cout << "1.-Nuevo libro\n2.-Borrar libro\n3.-ver libros publicados antes de:\n4.-Ver libros publicados despues de;\n5.-ver libros en el periodo de:\n6.-Ver libros de:\n7.-Ver libros de la editorial:\n" << endl;
+    int op = 1;
+    cin >> op;
     
     
     imprimeArreglo<Libro>(biblio, nLibros);
