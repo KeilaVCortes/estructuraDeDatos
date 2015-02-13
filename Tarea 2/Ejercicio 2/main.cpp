@@ -36,6 +36,9 @@ int main(){
             case 6:
                 Orden<string>::seleccion(caracteres, tamanio, Orden<string>::asc);
             break;
+            default:
+                cout << "pon una opciomn existente\n\n\n";
+            break;
         }
     //}
     

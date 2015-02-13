@@ -6,27 +6,24 @@
 template <class T>
 class Busqueda{
     public:
-        static Libro busquedaBin(T [], T , int, int);
+        static Libro busquedaSe(T [], T , int);
         
 };
 
 
 template<typename T>
-Libro Busqueda<T>::busquedaBin(T l[], T valor, int inferior, int superior){
-    if (inferior >= superior){
-        return -1;
-    }else{
-        int mitad = (inferior + superior) / 2;
-        
-        if(l[mitad] == valor){
-            return mitad;
-        }else if(valor < l[mitad]){
-            return busquedaBin(l, valor, inferior, mitad);
-        }else{
-            return busquedaBin(l, valor, mitad + 1, superior);
+Libro Busqueda<T>::busquedaSe(T v[], T valor,  int longitud){
+    int  existe = -1;
+    int indice = 0;
+    
+    if(longitud <= 0) return existe;
+    
+    while(existe == -1 && indice < longitud){
+        if(v[indice++] == valor){
+            existe = indice;
         }
-        
     }
+    return existe;
 }
 
 
