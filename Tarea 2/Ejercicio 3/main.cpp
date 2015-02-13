@@ -23,90 +23,91 @@ int main(){
     cout << "ordenar por\n 1.- titulo\n 2.- año\n 3.- edicion\n" << endl;
     cin >> opi;
     switch(opi){
-        case 1:
+        case 1:{
             int opa = 1;
             cout << "\n 1.- burbuja desc\n 2.- insercion desc\n 3.- seleccion desc\n 4.- burbuja asc\n 5.- insercion asc\n 6.- seleccion asc" <<endl;
             cin >> opa;
             switch(opa){
                 case 1:
-                    Orden<string>::burbuja(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 2:
-                    Orden<string>::insercion(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 3:
-                    Orden<string>::seleccion(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 4:
-                    Orden<string>::burbuja(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 case 5:
-                    Orden<string>::insercion(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 case 6:
-                    Orden<string>::seleccion(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 default:
                     cout << "pon una opciomn existente\n\n\n";
                 break;
             }
-        break;
-        case 2:
+        
+        break;}
+        case 2:{
             int ope = 1;
             cout << "\n 1.- burbuja desc\n 2.- insercion desc\n 3.- seleccion desc\n 4.- burbuja asc\n 5.- insercion asc\n 6.- seleccion asc" <<endl;
             cin >> ope;
             switch(ope){
                 case 1:
-                    Orden<string>::burbuja(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 2:
-                    Orden<string>::insercion(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 3:
-                    Orden<string>::seleccion(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 4:
-                    Orden<string>::burbuja(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 case 5:
-                    Orden<string>::insercion(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 case 6:
-                    Orden<string>::seleccion(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 default:
                     cout << "pon una opciomn existente\n\n\n";
                 break;
             }
-        break;
-        case 3:
+        break;}
+        case 3:{
             int opo = 1;
             cout << "\n 1.- burbuja desc\n 2.- insercion desc\n 3.- seleccion desc\n 4.- burbuja asc\n 5.- insercion asc\n 6.- seleccion asc" <<endl;
             cin >> opo;
             switch(opo){
                 case 1:
-                    Orden<string>::burbuja(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 2:
-                    Orden<string>::insercion(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 3:
-                    Orden<string>::seleccion(biblio, tamanio, Orden<string>::desc);
+                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::desc);
                 break;
                 case 4:
-                    Orden<string>::burbuja(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::burbuja(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 case 5:
-                    Orden<string>::insercion(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::insercion(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 case 6:
-                    Orden<string>::seleccion(biblio, tamanio, Orden<string>::asc);
+                    Orden<Libro>::seleccion(biblio, tamanio, Orden<Libro>::asc);
                 break;
                 default:
                     cout << "pon una opciomn existente\n\n\n";
                 break;
             }
-        break;
+        break;}
         default:
             cout << "pon op valida" << endl;
         break;
