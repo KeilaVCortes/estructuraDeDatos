@@ -11,8 +11,9 @@ int main(){
     cout << "numero: "<< endl;
     int num;
     cin >> num;
-    cout << convierte(num, 0, ".") << endl;;
-
+    string cadena = convierte(num, 0, ".");
+    for (int i = cadena.length()-1; i >= 0; i--)
+        cout << cadena[i];
     return 0;
 }
 
@@ -21,13 +22,13 @@ string convierte(int num, int resul, string result){
         return result;
     }else{
         resul = num%16;
-        string result;
+    
         switch(resul){
             case 1:
                 result += "1";
             break;
             case 2:
-                result = result+ "2";
+                result = result + "2";
             break;
             case 3:
                 result = result + "3";
