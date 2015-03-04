@@ -5,8 +5,6 @@ Libro::Libro(){}
 Libro::Libro(string titulo, string autor, int paginas, int edicion, string editorial, int anio) : titulo(titulo), autor(autor), paginas(paginas), edicion(edicion), editorial(editorial), anio(anio){
     
 }
-
-
     
 bool Libro::operator<(Libro & libro){
     return  anio < libro.anio;
@@ -25,7 +23,7 @@ bool Libro::operator==(Libro & libro){
 }
 
 ostream & operator <<(ostream & os, Libro & libro){
-    os << libro.titulo << endl;
+    os << libro.titulo << "  " << libro.anio << "  " << libro.edicion << endl;
     return os;
 }
 

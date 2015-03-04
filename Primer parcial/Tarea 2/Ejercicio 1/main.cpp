@@ -30,10 +30,8 @@ int main(){
         
         break;
         case 3:
-            cout << "Desde que fecha quieres libros?" << endl;
-            int anii;
-            cin >> anii;
-            //int pos = Busqueda<int>::busquedaSe(biblio, anii , nLibros);
+            cout << "Desde que"
+            int pos = Busqueda<Libro>::busquedaSe(biblio, anio , 5);
         break;
         case 4:
         

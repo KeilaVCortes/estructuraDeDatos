@@ -8,3 +8,4 @@ En esste repositorio se encuentran ejercicios sobre:
     - funciones recursivas
     - Metodos de busqueda iterativos y recursivos
     - Metodos de Ordenamiento iterativos y recursivos
+    - Listas 
