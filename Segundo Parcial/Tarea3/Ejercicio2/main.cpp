@@ -40,7 +40,7 @@ int main(){
         cout << "pon número:  ";
         int numero;
         cin >> numero;
-        N->insertFront(numero);
+        N->insertBack(numero);
     }
     cout << "Listo, ahora haremos la lista ´M´ " << endl;
     cout << "Cuantos numeros deceas meter en M ? " ;
@@ -50,7 +50,7 @@ int main(){
         cout << "pon número:  ";
         int numero;
         cin >> numero;
-        M->insertFront(numero);
+        M->insertBack(numero);
     }
     
 
@@ -63,48 +63,74 @@ int main(){
     cout << "Que deseas hacer?\n 1.- N ⋃ M\n 2.- N - M\n 3.- M - N\n 4.- N * M\n 5.- N ⋂ M \n 6.- Nada" << endl;
     int op;
     int tam;
-    if(longitudM < longitudN){
-        tam = longitudN -1;
+    if(longitudM > longitudN){
+        tam = longitudN;
     }else{
-        tam = longitudM -1 ;
+        tam = longitudM;
     }
     //cout << tam;
     cin >> op;
     switch(op){
         case 1:{
             int n;
-            for (int i = 0; i < tam; ++i){
-                n = ((*(N->at(i))).getInfo());
-                if(P->empty()){
-                    P->insertFront(n);
-                }else{
-                    if (((*(P->at(i))).getInfo()) != n){
-                        P->insertFront(n);
-                    }    
+            for (int i = 0; i < longitudN; ++i){
+                n = N->at(i)->getInfo();
+                P->insertBack(n);
+            }
+            
+            for (int i = 0; i < longitudM; ++i){
+                n = M->at(i)->getInfo();
+                if (!P->search(n)){
+                    P->insertBack(n);    
                 }
-            }  
+            }
             cout << *P << endl;
         }
         break;
         
-        case 2 :
-        
+        case 2:{
+            for(int i = 0; i < longitudN; ++i){
+                if(!M->search(N->at(i)->getInfo())){
+                    P->insertBack(N->at(i)->getInfo());  
+                }
+            }    
+        }
         break;
         
-        case 3:
+        case 3:{
+            for(int i = 0; i < longitudM; ++i){
+                if(!N->search(M->at(i)->getInfo())){
+                    P->insertBack(M->at(i)->getInfo());  
+                }
+            }  
+        }
         
         break;
         
         case 4:
+            for(int i = 0; i < longitudN; ++i){
+                for(int j = 0; j < longitudM; ++j){
+                    int numi;
+                    numi = N->at(i)->getInfo() * M->at(j)->getInfo();
+                    P->insertBack(numi);
+                }
+            }
         
         break;
         
-        case 5:
+        case 5:{
+          for(int i = 0; i < tam; ++i){
+                if(N->search(M->at(i)->getInfo())){
+                    P->insertBack(M->at(i)->getInfo());  
+                }
+            }
+            
+        }
         
         break;
         
         case 6:
-            exit();
+            cout << "bye" << endl;
         break;
         
         default:
@@ -112,6 +138,12 @@ int main(){
         break;
     }
     
+    
+    cout << endl << *P << endl;
+    
+    delete M;
+    delete N;
+    delete P;
     
     return 0;
 }

@@ -1,10 +1,3 @@
-//
-//  LinkedList.h
-//  LinkedList
-//
-//  Created by Vicente Cubells Nonell on 23/02/15.
-//  Copyright (c) 2015 Vicente Cubells Nonell. All rights reserved.
-//
 
 #ifndef LinkedList_LinkedList_h
 #define LinkedList_LinkedList_h
@@ -61,6 +54,7 @@ public:
     Iterator end() {return {this, _size }; }
     
     Node<T> * operator [](const int);
+    bool search(T);
     
 };
 
@@ -264,6 +258,19 @@ Node<T> * LinkedList<T>::operator [](const int position)
     return at(position);
 }
     
+template  <class T>
+bool LinkedList<T>::search(T element){
+    bool exist = false;
+    
+    Node<T> * tmp = _first;
+    
+    while (tmp != nullptr && !exist)
+    {
+        exist = tmp->getInfo() == element;
+        tmp = tmp->getNext();
+    }
+    return exist;
+}
 
 
 #endif
