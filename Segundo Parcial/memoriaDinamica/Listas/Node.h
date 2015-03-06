@@ -7,6 +7,7 @@ class Node{
     
     public:
         Node() {}
+        ~Node() { next = nullptr; }
         Node(T _info) : info(_info) {}
     
         T getInfo() const { return info;}

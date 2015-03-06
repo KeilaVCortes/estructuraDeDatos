@@ -2,6 +2,9 @@
 Margot Duek
 Tarea 3
 Ejercicio 1
+
+
+En este ejercicio se pide 
 */
 
 #include <iostream>
@@ -43,5 +46,8 @@ int main (){
     
     /* Imprimir el contenido de la lista */
     std::cout << endl <<  *numeros << std::endl;
+    
+    delete numeros;
+    
     return 0;
 }

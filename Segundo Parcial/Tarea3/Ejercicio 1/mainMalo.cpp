@@ -55,7 +55,7 @@ int main (){
         }else{
             for(int j = 1; j < (1 + i);  ++j){
                 int temp;
-                temp = ((*(numeros->at(primerValor + i ))).getInfo()) % j;
+                temp = ((*(numeros->at(i))).getInfo()) % j;
                 if (temp == 0){
                     contador ++;
                 }
