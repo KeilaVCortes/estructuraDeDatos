@@ -32,3 +32,12 @@ std::ostream & operator << (std::ostream & os,  const Persona & persona)
     
     return os;
 }
+
+bool Persona::operator  == (Persona & persona){
+    if(persona.nombre == nombre && persona.apellido == apellido){
+        return true;
+    }else {
+        return false;
+    }
+}
+    

@@ -29,6 +29,7 @@ nacimiento
 #include<string>
 #include "Persona.h"
 #include "LinkedList.h"
+#include "BusquedaGenerica.h"
 using namespace std;
 
 int main(){
@@ -55,12 +56,24 @@ int main(){
                 int anio;
                 cin >> anio;
                 
-                 M->insert(Persona(nombre,apellido, edad, anio));
+                Persona aux(nombre,apellido, edad, anio);
+                M->insert(aux);
+                 
                 
             break;
             
             case 2:
-            
+                cout << "nombre: ";
+                string nombre;
+                cin >> nombre;
+                cout << "apellido: ";
+                string apellido;
+                cin >> apellido;
+                
+                Persona aux(nombre, apellido, 0,0);
+                
+                
+                
             break;
             
             case 3:
