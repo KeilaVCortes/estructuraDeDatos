@@ -71,13 +71,13 @@ int main(){
                 cin >> apellido;
                 
                 Persona aux(nombre, apellido, 0,0);
-                //busqueda       
+                //Persona * persi = M->getArray();      
             } 
                 
             break;
             
             case 3:
-            
+                
             break;
             
             case 4:

@@ -223,13 +223,13 @@ Node<T> *  LinkedList<T>::at(int position)
     
 }
 
-/*
+
 template  <class T>
 T *  LinkedList<T>::getArray(){
-    for(int i  = 0; i < )
+    return LinkedList<T>::getArrey();
 }
 
-*/
+
 
 template  <class T>
 int LinkedList<T>::at(Node<T> * node)
