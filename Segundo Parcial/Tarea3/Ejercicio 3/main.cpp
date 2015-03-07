@@ -38,7 +38,7 @@ int main(){
     int a = 1;
     while(a != 666){
         cout << "Que quieres hacer?" << endl;
-        cout << " 1.- Añadir persona\n 2.-Buscar persona\n 3.-Borrar persona\n 4.- ver todas la personas\n 5.- borrar todas las personas\n 6.- Ver cantidad de personas\n 7.- salir" << endl;
+        cout << " 1.- Añadir persona\n 2.- Buscar persona\n 3.- Borrar persona\n 4.- ver todas la personas\n 5.- borrar todas las personas\n 6.- Ver cantidad de personas\n 7.- salir" << endl;
         int op;
         cin >> op;
         switch(op){
@@ -86,6 +86,7 @@ int main(){
             
             case 5:
                 M->clear();
+                cout << "Lito :) " << endl;
             break;
             
             case 6:

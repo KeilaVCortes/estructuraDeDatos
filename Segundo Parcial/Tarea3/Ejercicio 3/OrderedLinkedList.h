@@ -2,6 +2,13 @@
 #include "LinkedList.h"
 #include "Persona.h"
 
-class OrderedLinkedList : public LinkedList{
-    
+template<class T>
+class OrderedLinkedList : public LinkedList<T>{
+    public:
+        void insert();
 };
+
+template<class T>
+void OrderedLinkedList::insert(parametros iguales){
+    
+}

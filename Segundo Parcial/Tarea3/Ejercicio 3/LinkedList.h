@@ -43,6 +43,8 @@ public:
     Node<T> *  removeFront();
     Node<T> *  removeBack();
     
+    T * getArray();
+    
     void clear();
     
     Node<T> *  at(int);
@@ -220,6 +222,14 @@ Node<T> *  LinkedList<T>::at(int position)
     return tmp;
     
 }
+
+/*
+template  <class T>
+T *  LinkedList<T>::getArray(){
+    for(int i  = 0; i < )
+}
+
+*/
 
 template  <class T>
 int LinkedList<T>::at(Node<T> * node)
