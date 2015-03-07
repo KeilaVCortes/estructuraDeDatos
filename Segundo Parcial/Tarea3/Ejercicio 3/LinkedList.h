@@ -32,6 +32,7 @@ public:
     bool empty();
     
     void insert(T, int);
+    //virtual void insert1(T, int);
     void insert(Node<T> *, int);
     void insertFront(T);
     void insertFront(Node<T> *);

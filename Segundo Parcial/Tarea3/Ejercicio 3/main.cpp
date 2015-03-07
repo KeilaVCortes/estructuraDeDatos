@@ -25,24 +25,24 @@ nacimiento
 
 */
 
-#include<iostream>
-#include<string>
-#include "Persona.h"
-#include "LinkedList.h"
-#include "BusquedaGenerica.h"
-using namespace std;
 
+#include "Persona.h"
+
+#include <iostream>
+#include "Node.h"
+#include "LinkedList.h"
+using namespace std;
 int main(){
     
     LinkedList<Persona> * M = new LinkedList<Persona>();
     int a = 1;
     while(a != 666){
         cout << "Que quieres hacer?" << endl;
-        cout << "1.- Añadir persona\n 2.-Buscar persona\n 3.-Borrar persona\n 4.- ver todas la personas\n 5.- borrar todas las personas\n 6.- Ver cantidad de personas\n 7.- salir" << endl;
+        cout << " 1.- Añadir persona\n 2.-Buscar persona\n 3.-Borrar persona\n 4.- ver todas la personas\n 5.- borrar todas las personas\n 6.- Ver cantidad de personas\n 7.- salir" << endl;
         int op;
         cin >> op;
         switch(op){
-            case 1:
+            case 1:{
                 cout << "nombre: ";
                 string nombre;
                 cin >> nombre;
@@ -56,13 +56,13 @@ int main(){
                 int anio;
                 cin >> anio;
                 
-                Persona aux(nombre,apellido, edad, anio);
-                M->insert(aux);
+                Persona persona(nombre,apellido, edad, anio);
+                M->insertBack(persona);
                  
-                
+            }
             break;
             
-            case 2:
+            case 2:{
                 cout << "nombre: ";
                 string nombre;
                 cin >> nombre;
@@ -71,8 +71,8 @@ int main(){
                 cin >> apellido;
                 
                 Persona aux(nombre, apellido, 0,0);
-                
-                
+                //busqueda       
+            } 
                 
             break;
             
@@ -81,7 +81,7 @@ int main(){
             break;
             
             case 4:
-            
+                 cout << endl << *M << endl;
             break;
             
             case 5:
