@@ -69,15 +69,50 @@ int main(){
                 cout << "apellido: ";
                 string apellido;
                 cin >> apellido;
+                cout << "Edad: ";
+                int edad;
+                cin >> edad;
+                cout << "año de nacimiento: ";
+                int anio;
+                cin >> anio;
                 
-                Persona aux(nombre, apellido, 0,0);
-                //Persona * persi = M->getArray();      
+                Persona persona(nombre,apellido, edad, anio);
+                
+                if (M->search(persona)){
+                    cout << "Si existe " << endl;
+                }else{
+                    cout << "no existe" << endl;
+                }
+                
+                
             } 
                 
             break;
             
-            case 3:
+            case 3:{
+                cout << "nombre: ";
+                string nombre;
+                cin >> nombre;
+                cout << "apellido: ";
+                string apellido;
+                cin >> apellido;
+                cout << "Edad: ";
+                int edad;
+                cin >> edad;
+                cout << "año de nacimiento: ";
+                int anio;
+                cin >> anio;
                 
+                Persona persona(nombre,apellido, edad, anio);
+                
+                
+                if (M->search(persona)){
+                    cout << "Borrado " << endl;
+                    M->remove(M->searchNode(persona));
+                }else{
+                    cout << "no existe" << endl;
+                }
+            }
             break;
             
             case 4:

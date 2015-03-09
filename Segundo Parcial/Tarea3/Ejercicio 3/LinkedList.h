@@ -42,6 +42,7 @@ public:
     Node<T> * remove(int);
     Node<T> *  removeFront();
     Node<T> *  removeBack();
+    Node<T> * remove(Node<T> * );
     
     T * getArray();
     
@@ -58,7 +59,7 @@ public:
     
     Node<T> * operator [](const int);
     bool search(T);
-    
+    Node<T> *  searchNode(T);
 };
 
 template  <class T>
@@ -188,6 +189,13 @@ Node<T> *  LinkedList<T>::removeBack()
     return remove(_size - 1);
 }
 
+
+template  <class T>
+Node<T> *  LinkedList<T>::remove(Node<T> * node)
+{
+    return remove( at(node) );
+}
+
 template  <class T>
 void LinkedList<T>::clear()
 {
@@ -281,6 +289,19 @@ bool LinkedList<T>::search(T element){
         tmp = tmp->getNext();
     }
     return exist;
+}
+
+template  <class T>
+Node<T> * LinkedList<T>::searchNode(T element){
+     Node<T> *  node = nullptr;
+    
+    Node<T> * tmp = _first;
+    
+    while (tmp != nullptr && node == nullptr){
+        if(tmp->getInfo() == element){ node = tmp; }
+        tmp = tmp->getNext();
+    }
+    return node;
 }
 
 
