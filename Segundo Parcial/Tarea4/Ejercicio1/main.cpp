@@ -26,33 +26,38 @@ int main(){
            pila->push(ecuacion[i]);
         }
         else if(ecuacion[i] == ')'){
-            if(pila->top()->getInfo() == '(' && !pila->empty()){
+            if(pila->empty()){
+                noBal++;
+            }else {
                 pila->pop();
             }
         }
         else if(ecuacion[i] == '}'){
-            if(pila->top()->getInfo() == '{' && !pila->empty()){
+            if(pila->empty()){
+                noBal++;
+            }else{
                 pila->pop();
             }
         }
         else if(ecuacion[i] == ']'){
-            if(pila->top()->getInfo() == '['){
-                if(pila->empty()){
-                    noBal++;
-                }else{
-                    pila->pop();
-                }
-               
+            if(pila->empty()){
+                noBal++;
+            }else{
+                pila->pop();
             }
         }
     }
-    if (pila->empty()){
+    if (pila->empty() && noBal == 0){
         banlanceado = true;
     }
    
     
-    cout << *pila << endl;
     cout << banlanceado << endl;
+    if(banlanceado){
+        cout << "ecuacion banlanceada" << endl;
+    }else{
+        cout << "ecuacion no balanceada" << endl;
+    }
     
      /* Eliminar la pila */
     delete pila;
