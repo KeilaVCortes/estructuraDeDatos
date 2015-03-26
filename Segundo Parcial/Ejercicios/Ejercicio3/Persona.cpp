@@ -9,12 +9,9 @@ std::ostream & operator << (std::ostream & os,  const Persona & persona)
     return os;
 }
 
-bool Persona::operator  == (Persona & tipo){
-    if(persona.tipo == tipo){
+bool Persona::operator  == (Persona & persona){
+    if(persona.tipo)
         return true;
-    }else {
-        return false;
-    }
 }
 
 

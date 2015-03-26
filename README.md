@@ -9,3 +9,9 @@ En esste repositorio se encuentran ejercicios sobre:
     - Metodos de busqueda iterativos y recursivos
     - Metodos de Ordenamiento iterativos y recursivos
     - Listas 
+    
+    
+    
+    
+Casi todo lo que está en este repositorio, sólamente funciona con la libreriía 
+c++ 11
