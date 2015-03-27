@@ -27,7 +27,7 @@ int main(){
     red->insertBack({2});
     red->insertBack({12});
     red->insertBack({98});
-    cout << "hola" << endl;
+    //cout << "hola" << endl;
     
     bool existe;
     //ping(1,5,1,red);
@@ -37,6 +37,8 @@ int main(){
         recibido(token, red);
     }
     
+    delete red;
+     
     return 0;
 }
 

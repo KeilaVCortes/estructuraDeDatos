@@ -1,0 +1,14 @@
+Árbol binario
+    Cada nodo tiene máximo 2 hijos
+    El nodo raíz no se puede perder 
+    El nodo que no tiene hijo se llama nodo hoja
+    Nodos internos son los que estan en medio, ni raíz ni hoja
+    Se puede descomponer en sub-árboles
+    
+    Recorrios :
+        preorden o prefijo-> empieza por el nodo en el que está
+        inorden-> busca a la izquierda y empieza por los hijos de la izquierda, 
+        después es el nodo mismo y despues a la derecha
+        posorden-> siempre va a de abajo para arriba, de hijo a padre
+        
+    
