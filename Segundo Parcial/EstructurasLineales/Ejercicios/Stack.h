@@ -9,16 +9,19 @@ public:
     Stack();
     virtual ~Stack();
     
-    int size();
-    bool empty();
+    int size() const override;
+    bool empty() const override;
     
     Node<T> * top();
     Node<T> * pop();
-    void push(T);
+    void push(const T &);
     void push(Node<T> *);
     
+    bool operator ==(const Stack<T> &) const;
+    bool operator !=(const Stack<T> &) const;
+    
     template <typename Tn>
-    friend std::ostream & operator <<(std::ostream &, Stack<Tn> &);
+    friend std::ostream & operator <<(std::ostream &, const Stack<Tn> &);
 };
 
 template <class T>
@@ -33,13 +36,13 @@ Stack<T>::~Stack()
 }
 
 template <class T>
-int Stack<T>::size()
+int Stack<T>::size() const
 {
     return LinkedList<T>::size();
 }
 
 template <class T>
-bool Stack<T>::empty()
+bool Stack<T>::empty() const
 {
     return LinkedList<T>::empty();
 }
@@ -47,36 +50,47 @@ bool Stack<T>::empty()
 template <class T>
 Node<T> * Stack<T>::top()
 {
-    return this->first();
+    return LinkedList<T>::first();
 }
 
 template <class T>
 Node<T> * Stack<T>::pop()
 {
-    return this->removeFront();
+    return LinkedList<T>::removeFront();
 }
 
 template <class T>
-void Stack<T>::push(T value)
+void Stack<T>::push(const T & value)
 {
-    this->insertFront(value);
+    LinkedList<T>::insertFront(value);
 }
 
 template <class T>
 void Stack<T>::push(Node<T> * node)
 {
-    this->insertFront(node);
+    LinkedList<T>::insertFront(node);
 }
 
 template <class T>
-std::ostream & operator <<(std::ostream & os, Stack<T> & stack)
+bool Stack<T>::operator ==(const Stack<T> & stack) const
 {
-    for (auto i : stack) {
-        os << i;
+    return size() == stack.size();
+}
+
+template <class T>
+bool Stack<T>::operator !=(const Stack<T> & stack) const
+{
+    return ! (*this == stack);
+}
+
+template <class T>
+std::ostream & operator <<(std::ostream & os, const Stack<T> & stack)
+{
+    for (const Node<T> & node : stack) {
+        os << node << std::endl;
     }
     
     return os;
 }
-
 
 #endif

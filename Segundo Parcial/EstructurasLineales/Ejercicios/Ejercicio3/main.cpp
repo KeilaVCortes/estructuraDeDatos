@@ -3,10 +3,11 @@ Margot Duek
 Ejercicios de clase
 Ejercicio 3
 */
-#include "../Stack.h"
+
 #include "../Queue.h"
-#include <iostream>
-#include <string>
+#include "../LinkedList.h"
+#include "Persona.h"
+
 using namespace std;
 
 
@@ -14,13 +15,13 @@ int main(){
     
     
     
-    Queue<char> * cola = new Queue<char>();
+    Queue<Persona> * cola = new Queue<Persona>();
     
-    
+    float espera = 0;
     int a = 1;
     while(a != 666){
         cout << "Que quieres hacer?" << endl;
-        cout << " 1.- Añadir persona\n 2.- Saber tiempo de espera\n 7.- salir" << endl;
+        cout << " 1.- Añadir persona\n 2.- Saber tiempo de espera\n 3.- salir" << endl;
         int op;
         cin >> op;
         switch(op){
@@ -35,35 +36,37 @@ int main(){
                 
                 Persona persona(nombre,tipo);
                 cola->enqueue(persona);
-                 
+                
+                if(persona.tipo == "Retiro"){
+                    espera += 4;
+                }else if(persona.tipo == "Deposito"){
+                    espera += 2;
+                }else if(persona.tipo == "Consulta"){
+                    espera += 3.5;
+                }else if(persona.tipo == "Actualizacion"){
+                    espera += 5;
+                }else if(persona.tipo == "Pagos"){
+                    espera += 2;
+                }  
+            
+                
             }
             break;
             
             case 2:{
-                if()
+                cout << "Tiempo total de espera:  " << espera << endl;
+                cout << "Personas antes que usted: "<< *cola << endl;
             } 
                 
             break;
+            
+            case 3:
+                cout << "bye" << endl;
+                a = 666;
+            break;
+            
         }
     }
-
-
-
-
-    cout << "pon tu ecuacion" << endl;
-    string ecuacion;
-    cin >> ecuacion; 
-    
-    for(int i = 0; i < ecuacion.length(); ++i){
-        pila->push(ecuacion[i]);
-    }
-       
-    for(int i = 0; i < ecuacion.length(); ++i){
-        cola->enqueue(pila->pop()->getInfo());
-    }
-  
-
-    cout << *cola << endl;
 
      /* Eliminar la pila */
     delete cola;

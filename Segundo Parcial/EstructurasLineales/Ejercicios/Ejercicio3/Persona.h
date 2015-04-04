@@ -1,15 +1,10 @@
 /*
 Clase Persona
 
-
 */
-
-
-#include <iostream>
 #include <string>
+#include <iostream>
 #include <ostream>
-#include "EdoDeCuenta.h"
-#include "LinkedList.h"
 
 class Persona {
 private:

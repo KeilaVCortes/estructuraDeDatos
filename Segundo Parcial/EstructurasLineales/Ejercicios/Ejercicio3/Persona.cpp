@@ -4,17 +4,22 @@
 
 std::ostream & operator << (std::ostream & os,  const Persona & persona)
 {
-    os << persona.apellidos << ", " << persona.nombre << "(" << persona.edad << ")" << persona.fNacimiento << std::endl;
+    os << persona.nombre << "(" << persona.tipo << ")" << std::endl;
     
     return os;
 }
-
+/*
 bool Persona::operator  == (Persona & persona){
     if(persona.tipo)
         return true;
 }
+*/
+bool Persona::operator == (Persona & persona)
+{
 
-
-void Persona::agregarEdoDeCuenta(EdoDeCuenta nuevoEstado){
-    estadosDeCuent->insertBack(nuevoEstado);
+    if (tipo == persona.tipo) {
+        return true;
+    }
+    
+    return false;
 }

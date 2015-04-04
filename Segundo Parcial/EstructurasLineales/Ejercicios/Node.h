@@ -4,6 +4,7 @@
 #define LinkedList_Node_h
 
 #include <ostream>
+#include <iostream>
     
 template <class T>
 class Node {
@@ -11,28 +12,48 @@ class Node {
     Node<T> * next = nullptr;
     
 public:
+    
+    /* Constructores */
     Node() { }
-    ~Node() { next = nullptr; }
-    Node(T _info) : info(_info) {}
+    Node(const T & _info) : info (_info) { }
+    Node(const Node<T> & );
+    
+    /* Destructor */
+    virtual ~Node();
     
     T getInfo() const { return info; }
-    void setInfo(T value) { info = value; }
+    void setInfo(const T & value) { info = value; }
     
     Node<T> * getNext() const { return next; }
     void setNext(Node<T> * value) { next = value; }
     
     template <typename Tn>
-    friend std::ostream & operator << (std::ostream & os, Node<Tn>  & node);
+    friend std::ostream & operator << (std::ostream & os, const Node<Tn>  & node);
 };
 
 template <class T>
-std::ostream & operator << (std::ostream & os, Node<T>  & node)
+Node<T>::Node(const Node<T> & other)
+{
+    info = other.info;
+    next = other.next;
+}
+
+template <class T>
+Node<T>::~Node()
+{
+    info.~T();
+    next = nullptr;
+}
+
+
+template <class T>
+std::ostream & operator << (std::ostream & os, const Node<T>  & node)
 {
     os << node.info;
     
     return os;
 }
-    
+
 
 
 
