@@ -2,18 +2,24 @@
 Margot Duek
 Ejercicios de clase
 Ejercicio 4 
+
+En un almacén se guarda mercadería en contenedores. No es posible colocar más de n
+contenedores uno encima del otro y, no hay área para más de m pilas de contenedores. Cada
+contenedor tiene un número y un nombre de la empresa propietaria. Elabore un programa que
+permita gestionar el ingreso y salida de contenedores. Note que para retirar un contenedor es
+necesario retirar los contenedores que están encima de él y colocarlos en otra pila.
 */
 #include "../Stack.h"
-#include <iostream>
-#include <string>
+#include "Empresa.h"
 using namespace std;
 
 int main(){
     
     
     
-    Stack< Stack<int> *> pila1;
-    Stack< Stack<int> *> pila2;
+    LinkedList< Stack<int> * > listaPilas;
+    LinkedList<Empresa> empresas;
+   
     
     Stack<int> empresa1;
     Stack<int> empresa2;
@@ -29,39 +35,42 @@ int main(){
     empresa4.push(41);
     empresa4.push(42);
     
-    pila1.push ( &empresa1 );
-    pila1.push ( &empresa2 );
-    pila1.push ( &empresa3 );
-    pila1.push ( &empresa4 );
+    listaPilas.insertBack( &empresa1 );
     
-    Stack<int> empresa21;
-    Stack<int> empresa22;
-    Stack<int> empresa23;
-
-    empresa21.push(211);
-    empresa21.push(212);
-    empresa22.push(221);
-    empresa22.push(222);
-    empresa23.push(231);
-    empresa23.push(232);
-
-    
-    pila2.push ( &empresa21 );
-    pila2.push ( &empresa22 );
-    pila2.push ( &empresa23 );
-
-
 
     int a = 1;
     while(a != 666){
+        int cantidadEmpresas = 0;
         cout << "Que quieres hacer?" << endl;
-        cout << " 1.- consultar almacen\n 2.- extraer elemento\n 3.- salir" << endl;
+        cout << " 1.- consultar almacen\n 2.- extraer elemento\n 3.- agregar empresa\n 4.- agregar pila\n 5.- salir" << endl;
         int op;
         cin >> op;
         switch(op){
             case 1:{
                  /* Mostrar toda la estructura */
-                Node< Stack<int> * > * tmp = pila1.top();
+                Node< Stack<int> * > * tmp = listaPilas.first();
+                
+                while ( tmp != nullptr) {
+                    std::cout << *(tmp->getInfo()) << std::endl;
+                    
+                    tmp = tmp->getNext();
+                }
+            }
+            break;
+            
+            case 2:{
+                int extract; 
+                int num;
+                string empresaa;
+                Stack<int> empresaal;
+                cout << "Nombra la empresa de la cual vas a extraer ";
+                cin >> empresaa;
+                /*
+                cout << "Pila de la cual deseas extraer(Numero): " ;
+                cin << num;
+                */
+                
+                Node< Stack<int> * > * tmp = empresaa.first();
                 
                 while ( tmp != nullptr) {
                     std::cout << *(tmp->getInfo()) << std::endl;
@@ -69,41 +78,38 @@ int main(){
                     tmp = tmp->getNext();
                 }
                 
-                Node< Stack<int> * > * tmp2 = pila2.top();
-                
-                while ( tmp2 != nullptr) {
-                    std::cout << *(tmp2->getInfo()) << std::endl;
-                    
-                    tmp2 = tmp2->getNext();
-                }
-                
-            }
-            break;
-            
-            case 2:{
-                int extract; 
-                int lista;
-                string empresaa;
-                cout << "Pila de la cual deseas extraer: " ;
-                cin << lista;
                 cout << "Elemento a extraer: " ;
                 cin >> extract;
-                cout << "Nombra la empresa de la cual vas a extraer ";
-                cin >> empresaa;
+                Stack<int> pilaTemporal;
                 
-                if(lista == 1){
-                    
-                }else if (lista == 2){
-                    
+                if(empresaa.top() == extract){
+                    empresaa.pop();
+                }else if (!empresaa.empty()){
+                    pilaTemporal.push(empresaa.pop());
                 }else{
-                    cout << "pon una lista valida" << endl;
+                    cout << "pon un elemento existente" << endl;
                 }
-                
             } 
                 
             break;
             
-            case 3:
+            case 3:{
+                cout << "Agregar empresa" << endl;
+                cout << "Nombre: ";
+                string nombre;
+                cin >> nombre;
+                cout << "Numero: ";
+                int num;
+                cin >> num;
+                
+                Empresa empresa(nombre, num);
+                empresas.insertBack(empresa);
+                
+                
+            }
+            break;
+            
+            case 4:
                 cout << "bye" << endl;
                 a = 666;
             break;

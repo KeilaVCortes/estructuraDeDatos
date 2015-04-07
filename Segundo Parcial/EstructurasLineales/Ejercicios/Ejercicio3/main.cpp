@@ -30,23 +30,33 @@ int main(){
                 string nombre;
                 cin >> nombre;
                 cout << "tipo: ";
-                string tipo;
-                cin >> tipo;
+                string tipol;
+                cin >> tipol;
                
                 
-                Persona persona(nombre,tipo);
+                Persona persona(nombre,tipol,0);
                 cola->enqueue(persona);
                 
-                if(persona.tipo == "Retiro"){
+                if(tipol == "Retiro"){
                     espera += 4;
-                }else if(persona.tipo == "Deposito"){
+                    Movimiento movimiento("Retiro", 4);
+                    persona.agregarMovimiento(movimiento);
+                }else if(tipol == "Deposito"){
                     espera += 2;
-                }else if(persona.tipo == "Consulta"){
+                    Movimiento movimiento("Deposito", 2);
+                    persona.agregarMovimiento(movimiento);
+                }else if(tipol == "Consulta"){
                     espera += 3.5;
-                }else if(persona.tipo == "Actualizacion"){
+                    Movimiento movimiento("Consulta", 4);
+                    persona.agregarMovimiento(movimiento);
+                }else if(tipol == "Actualizacion"){
                     espera += 5;
-                }else if(persona.tipo == "Pagos"){
+                    Movimiento movimiento("Actualizacion", 5);
+                    persona.agregarMovimiento(movimiento);
+                }else if(tipol == "Pagos"){
                     espera += 2;
+                    Movimiento movimiento("Pagos", 2);
+                    persona.agregarMovimiento(movimiento);
                 }  
             
                 
