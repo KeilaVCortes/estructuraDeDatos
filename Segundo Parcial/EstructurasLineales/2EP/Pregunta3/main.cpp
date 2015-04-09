@@ -28,17 +28,19 @@ int main(){
     }
     
     
-    for(int i = 0; i <  ecuacion.length(); ++i){
-        
-    }
     int op;
-    int tam;
-    if(longitudM > longitudN){
-        tam = longitudN;
-    }else{
-        tam = longitudM;
+    
+    for(int i = 0; i <  ecuacion.length(); ++i){
+        if(ecuacion[i] == "+"){
+            op == 1;
+        }else if(ecuacion[i] == "+"){
+            op == 2;
+        }
     }
-    //cout << tam;
+    
+    
+    
+
     cin >> op;
     switch(op){
         case 1:{

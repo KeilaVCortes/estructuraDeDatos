@@ -1,34 +1,35 @@
 #include <iostream>
 #include <string>
+#include "../Stack.h"
 
 using namespace std;
 
-string dec2bin(int dec, int aux, string res);
+void dec2bin(int dec);
 
 int main(){
     
     int dec = 7;
-    int aux = 0;
-    string s = "";
+    dec2bin(dec);
     
     
-    cout << dec2bin(dec,aux,s);
-  
+
     
     
     return 0;
 }
 
-string dec2bin(int dec, int aux, string res){
-    cout << res<< endl;
-    if(dec == 1 || dec == 0){
-        return "1" + res;
-    }else if (aux == 0){
-        if(aux == 1){
-            res += "1";
-        }else{
-            res += "0";
-        }
-        return dec2bin(dec/2, dec%2, res);
+void dec2bin(int dec){
+
+    Stack<int> bin;
+    
+    
+    while (dec > 0){
+        int aux = dec%2;
+        dec = (dec-aux)/2;
+        bin.push(aux);
+    }
+    
+    while (!bin.empty()){
+        cout << bin.pop()->getInfo();
     }
 }
