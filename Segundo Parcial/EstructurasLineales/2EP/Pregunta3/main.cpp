@@ -13,15 +13,16 @@ int main(){
     Stack<char> * pila = new Stack<char>();
     
     
-    string ecuacion = "";
+    string ecuacion = "{1,3,9,77} * {7,1,193}";
     
     for(int i = 0; i < ecuacion.length(); ++i){
         if (ecuacion[i] == '(' || ecuacion[i] == '{' || ecuacion[i] == '[' ){
             for(int j == i; j <  ecuacion.length(); ++j){
+                
                 while(ecuacion[j] != ')' || ecuacion[j] != '}' || ecuacion[j] == ']' ){
                     pila->push(ecuacion[i]);
                 }
-            }
+            } 
             
         }
        
@@ -38,10 +39,7 @@ int main(){
         }
     }
     
-    
-    
 
-    cin >> op;
     switch(op){
         case 1:{
             int n;
@@ -70,14 +68,6 @@ int main(){
             
         }
         
-        break;
-        
-        case 3:
-            cout << "bye" << endl;
-        break;
-        
-        default:
-            cout << "Pon una opcion valida" << endl;
         break;
     }
     
