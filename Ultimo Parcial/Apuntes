@@ -1,0 +1,19 @@
+Gráfos
+
+vertices: serian los nodos
+Aristas: son las conecciones, flechitas
+
+Adyacencia: un nodo es adyacente si existe una forma directa de llegar de un nodo
+    a otro nodo, en un grafo no dirigido los vertices conectados siempre son adyacentes
+    pero en un grafo dirigido no siempre pasa eso
+    
+Incidente: 
+
+Grado de un vertice: es el numero de incidentes de un grafo, si es un grafo no 
+    dirigido el grado es uno, 
+    
+grafo ciclo: se tiene al menos un ciclo
+grafo aciclico: no tiene ciclos (el numero de caminos siempre es finito)
+
+grafos ponderados: los aristas tienen información 
+    

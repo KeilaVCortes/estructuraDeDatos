@@ -3,10 +3,10 @@
 Margot Duek
 Estructuras de datos
 Tarea 5 
-Ejercicio 1
- 
+Ejercicio 3
  
  */
+ 
  
 #include "../BinaryTree.h"
 #include <iostream>
@@ -14,16 +14,19 @@ Ejercicio 1
 using namespace std;
 
 int main(){
-    
-    
- 
+
+     
     /* Crear un árbol binario */
     BinaryTree<int> numeros;
+    BinaryTree<int> reflejo;
     
     /* Insertar nodos */
     
     BNode<int> * uno = new BNode<int>(1);
     numeros.insert(nullptr, uno);
+    
+    BNode<int> * unob = new BNode<int>(1);
+    reflejo.insert(nullptr, unob);
     
     BNode<int> * dos = new BNode<int>(2);
     numeros.insert(uno, dos);
@@ -42,18 +45,15 @@ int main(){
     BNode<int> * diez = new BNode<int>(10);
     numeros.insert(tres, diez);
     
-
+    //BinaryTree<int>::copyTreeUPD(uno, unob);
     
-        /* Mostrar el árbol en preOrder */
-    std::cout << " si sumas ...." << std::endl;
+    /* Mostrar el árbol en preOrder */
+    std::cout << " ---- preOrder ----" << std::endl;
     numeros.preOrder();
     std::cout << std::endl;
-    
-    /*Sumar nodos :)  */
-    int suma = 0;
-    suma = numeros.intPreOrder();
-    cout << "te da: ";
-    cout << suma << endl;
+
+
+     
     
     
     return 0;

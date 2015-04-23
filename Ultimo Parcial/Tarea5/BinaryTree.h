@@ -45,15 +45,20 @@ public:
     int treeHeight() const;
     
     int max(int x, int y) const;
-    void copyTree(BNode<T> * &copiedTreeRoot, BNode<T> * otherTreeRoot);
+    //void copyTreeUPD(BNode<T> * &copiedTreeRoot, BNode<T> * otherTreeRoot);
     int treeNodeCount() const;
     
-    //const binaryTreeType<T>& operator= (const binaryTreeType<T>&);
+    
+    BinaryTree(const BinaryTree<T>& otherTree);
+    //const BinaryTree<T>& operator= (const BinaryTree<T>&);
     //virtual void search(const T& searchItem) const = 0;
     
     
     int intPreOrder() const;
     int intPreOrder(BNode<T> * node) const;
+    int reflex(BNode<T> * node);
+    int reflex();
+    
 };
 
 template <class T>
@@ -290,17 +295,21 @@ int BinaryTree<T>::height(BNode<T> * node) const{
    }
 }
 
+/*
 template <class T>
-void BinaryTree<T>::copyTree(BNode<T> * &copiedTreeRoot, BNode<T> * otherTreeRoot){
+void BinaryTree<T>::copyTreeUPD(BNode<T> * &copiedTreeRoot, BNode<T> * otherTreeRoot){
     if(otherTreeRoot == nullptr){
         copiedTreeRoot = nullptr;
     }else{
         copiedTreeRoot = new BNode<T>;
         copiedTreeRoot->info = otherTreeRoot->info;
-        copyTree(copiedTreeRoot->left, otherTreeRoot->left);
-        copyTree(copiedTreeRoot->right, otherTreeRoot->right);
+        copyTreeUPD(copiedTreeRoot->right, otherTreeRoot->right);
+        copyTreeUPD(copiedTreeRoot->left, otherTreeRoot->left);
+        
     }
 }
+
+*/
 
 template <class T>
 int BinaryTree<T>::treeHeight() const{
@@ -317,5 +326,42 @@ int BinaryTree<T>::treeLeavesCount() const{
     return leavesCount(root);
 }
 
+/*
+template <class T>
+const BinaryTree<T>& BinaryTree<T>::operator=(const BinaryTree<T>& otherTree){
+    if (this != &otherTree){
+        if (root != NULL)
+            clear(root);
+        if (otherTree.root == NULL) 
+            root = NULL;
+        else
+            copyTree(root, otherTree.root);
+    }
+    return *this;
+}
+*/
+
+
+
+template <class T>
+int BinaryTree<T>::reflex(BNode<T> * node)
+{
+    if (node) {
+        /* Invocar a los hijos */
+        return reflex(node->getRight());
+        return reflex(node->getLeft());
+        
+    }
+    
+    
+}
+
+template <class T>
+int BinaryTree<T>::reflex()
+{
+   reflex(root);
+    
+    
+}
 
 #endif
