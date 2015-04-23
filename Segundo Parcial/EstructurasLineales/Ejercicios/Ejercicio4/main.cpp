@@ -70,7 +70,7 @@ int main(){
                 cin << num;
                 */
                 
-                Node< Stack<int> * > * tmp = empresaa.first();
+                Node< Stack<int> * > * tmp = listaPilas.first();
                 
                 while ( tmp != nullptr) {
                     std::cout << *(tmp->getInfo()) << std::endl;
@@ -82,13 +82,34 @@ int main(){
                 cin >> extract;
                 Stack<int> pilaTemporal;
                 
-                if(empresaa.top() == extract){
-                    empresaa.pop();
-                }else if (!empresaa.empty()){
-                    pilaTemporal.push(empresaa.pop());
-                }else{
-                    cout << "pon un elemento existente" << endl;
+                if(empresaa == "empresa1"){
+                    if(empresa1.top()->getInfo() == extract){
+                        empresa1.pop();
+                    }else if (!empresa1.empty()){
+                        pilaTemporal.push(empresa1.pop());
+                    }else{
+                        cout << "pon un elemento existente" << endl;
+                    }
+                }else if(empresaa == "empresa2"){
+                    if(empresa2.top()->getInfo() == extract){
+                        empresa2.pop();
+                    }else if (!empresa2.empty()){
+                        pilaTemporal.push(empresa2.pop());
+                    }else{
+                        cout << "pon un elemento existente" << endl;
+                    }
+                }else if(empresaa == "empresa3"){
+                    if(empresa3.top()->getInfo() == extract){
+                        empresa3.pop();
+                    }else if (!empresa3.empty()){
+                        pilaTemporal.push(empresa3.pop());
+                    }else{
+                        cout << "pon un elemento existente" << endl;
+                    }
+                }else {
+                    cout << "Pon una empresa existente" << endl;
                 }
+   
             } 
                 
             break;

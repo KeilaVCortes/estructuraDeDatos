@@ -16,6 +16,7 @@ int main(){
     lista.insertBack(1);
     
     
+    
     for(int i = 0; i < lista.size(); ++i){
         for(int j = 1; j < lista.size(); ++j){
             //std::cout << "i " << lista.at(i)->getInfo();

@@ -11,7 +11,7 @@ números reales a otra lista, siendo m y n elegibles por el usuario (entrados po
 listas anteriores les llamaremos N y M respectivamente.
 Después de tener ambas listas, la aplicación debe ser capaz de realizar las siguientes
 operaciones:
-• N ⋃ M (Los elementos duplicados deben aparecer una sola vez)
+• N ⋃ M (Los elementos duplicados deben aparecer una sola vez) 
 • N - M
 • M - N
 • N * M

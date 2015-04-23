@@ -19,7 +19,7 @@ int main(){
     
     CircularLinkedList<Computadora> * red = new CircularLinkedList<Computadora>();
     
-    Token token(98,1, "Hola");
+    Token token(79,1, "Hola");
     
     red->insertBack({6});
     red->insertBack({1}); 

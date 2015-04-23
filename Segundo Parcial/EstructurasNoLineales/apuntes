@@ -7,8 +7,17 @@
     
     Recorrios :
         preorden o prefijo-> empieza por el nodo en el que está
+            1.- visita el nodo
+            2.- viaja por ell lado izquierdo
+            3.- viaja por el lado derecho
         inorden-> busca a la izquierda y empieza por los hijos de la izquierda, 
-        después es el nodo mismo y despues a la derecha
+            después es el nodo mismo y despues a la derecha
+            1.- viaja por el subarbol izquierdo
+            2.- visita el nodo
+            3.- viaja por el subarbol derecho
         posorden-> siempre va a de abajo para arriba, de hijo a padre
+            1.- viaja por el subarbol izquierdo
+            2.- viaja por el subarbol derecho
+            3.- visita el nodo
         
     

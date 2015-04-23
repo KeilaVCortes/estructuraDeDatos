@@ -69,6 +69,12 @@ int main(){
                 cout << "apellido: ";
                 string apellido;
                 cin >> apellido;
+                cout << "Edad: ";
+                int edad;
+                cin >> edad;
+                cout << "año de nacimiento: ";
+                int anio;
+                cin >> anio;
 
                 
                 Persona persona(nombre,apellido, edad, anio);
@@ -91,6 +97,12 @@ int main(){
                 cout << "apellido: ";
                 string apellido;
                 cin >> apellido;
+                cout << "Edad: ";
+                int edad;
+                cin >> edad;
+                cout << "año de nacimiento: ";
+                int anio;
+                cin >> anio;
 
                 
                 Persona persona(nombre,apellido, edad, anio);

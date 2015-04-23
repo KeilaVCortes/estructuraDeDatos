@@ -6,7 +6,7 @@
 #include "CircularLinkedList.h"
 
 template <class T>
-class Queue : private CircularLinkedList<T> {
+class Queue : public CircularLinkedList<T> {
 public:
     Queue();
     virtual ~Queue();
@@ -21,9 +21,12 @@ public:
     void enqueue(Node<T> *);
     
     Node<T> * dequeue();
+   //  template <typename Tn>
+     //   friend std::ostream & operator <<(std::ostream &, const Queue<Tn> &);
+        
     
-    template <typename Tn>
-    friend std::ostream & operator <<(std::ostream &, const Queue<Tn> &);
+   template <typename Tn>
+   friend std::ostream & operator <<(std::ostream &, const Queue<Tn> &);
 };
 
 template <class T>
@@ -90,9 +93,32 @@ std::ostream & operator <<(std::ostream & os, const Queue<T> & queue)
     return os;
 }
 
-
-
-
-
+/*
+template <class T>
+std::ostream & operator <<(std::ostream & os, const Queue<T> & queue)
+{
+    Node<T> * tempo;
+    tempo = queue.first();
+    for (; tempo->getNext() != nullptr ;) {
+        os << tempo << " ";
+        tempo = tempo->getNext();
+        
+    }
+    
+    return os;
+}
+*/
+/*
+template <class T>
+std::ostream & operator <<(std::ostream & os, const Queue<T> & list)
+{
+    for (const Node<T> & node : list )
+    {
+        os << node << std::endl;
+    }
+    
+    return os;
+}
+*/
 
 #endif

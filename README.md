@@ -8,7 +8,16 @@ En esste repositorio se encuentran ejercicios sobre:
     - funciones recursivas
     - Metodos de busqueda iterativos y recursivos
     - Metodos de Ordenamiento iterativos y recursivos
-    - Listas 
+    - Estructuras de datos lineales 
+        - Listas simplemente enlazadas
+        - Listas simplemente enlazadas circulares
+        - Listas doblemente enlazadas
+        - Listas doblemente enlazadas circulares
+    - Estructuras de datos no lineales
+        - árboles binarios
+        - árboles generales
+        - Gráfos
+        - matrices adyacentes 
     
     
     
