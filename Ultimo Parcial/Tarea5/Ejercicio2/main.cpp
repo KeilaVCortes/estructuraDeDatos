@@ -25,15 +25,13 @@ int main(){
      
     /* Crear un árbol binario */
     BinaryTree<int> numeros;
-    BinaryTree<int> reflejo;
+
     
     /* Insertar nodos */
     
     BNode<int> * uno = new BNode<int>(1);
     numeros.insert(nullptr, uno);
     
-    BNode<int> * unob = new BNode<int>(1);
-    reflejo.insert(nullptr, unob);
     
     BNode<int> * dos = new BNode<int>(2);
     numeros.insert(uno, dos);
@@ -59,16 +57,12 @@ int main(){
     numeros.preOrder();
     std::cout << std::endl;
    
-     /* Mostrar el árbol en preOrder */
-    std::cout << " ---- preOrder ----" << std::endl;
-    reflejo.preOrder();
-    std::cout << std::endl;
-    
-    reflejo.reflex(dos);
+
+    numeros.reflex();
     
     /* Mostrar el árbol en preOrder */
     std::cout << " ---- preOrder ----" << std::endl;
-    reflejo.preOrder();
+    numeros.preOrder();
     std::cout << std::endl;
      
     

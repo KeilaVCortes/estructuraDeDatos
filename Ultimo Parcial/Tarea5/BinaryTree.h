@@ -347,12 +347,14 @@ template <class T>
 int BinaryTree<T>::reflex(BNode<T> * node)
 {
     if (node) {
-        /* Invocar a los hijos */
-        return reflex(node->getRight());
-        return reflex(node->getLeft());
-        
+        reflex(node->getLeft());
+        reflex(node->getRight());
+
+        //Intercambiar derecho por izquierdo
+        BNode<T> *aux = node->getRight();
+        node->setRight(node->getLeft());
+        node->setLeft(aux);
     }
-    
     
 }
 
