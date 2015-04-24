@@ -86,5 +86,11 @@ int main(){
     numerosS.preOrder();
     std::cout << std::endl;
     
+    
+    
+    
+    
+    numerosS.isSymmetric();
+    
     return 0;
 }
