@@ -47,15 +47,8 @@ int main(){
     BNode<int> * diez = new BNode<int>(10);
     numeros.insert(tres, diez);
     
-    
-
-    
-    /* Mostrar el árbol en preOrder */
-    std::cout << " ---- preOrder ----" << std::endl;
-    numeros.preOrder();
-    std::cout << std::endl;
-
-
+        BNode<int> * doce = new BNode<int>(12);
+    numeros.insert(cinco, doce);
     
     
     BNode<int> * unoS = new BNode<int>(1);
@@ -81,16 +74,36 @@ int main(){
     
     
         
+
     /* Mostrar el árbol en preOrder */
-    std::cout << " ---- preOrder ----" << std::endl;
-    numerosS.preOrder();
+    std::cout << " ---- preOrder 1 dos----" << std::endl;
+    numerosS.preOrder(dosS);
+    std::cout << std::endl;
+
+
+    std::cout << " ---- preOrder 1 tres----" << std::endl;
+    numerosS.preOrder(tresS);
+    std::cout << std::endl;
+    
+    std::cout << " ---- preOrder 2 dos----" << std::endl;
+    numeros.preOrder(dos);
+    std::cout << std::endl;
+    
+        
+    std::cout << " ---- preOrder 2 tres----" << std::endl;
+    numeros.preOrder(tres);
     std::cout << std::endl;
     
     
+    cout << numerosS.intPreOrderSime(dosS, 0) << endl;
+    cout << numerosS.intPreOrderSime(tresS, 0) << endl;
+    cout << numeros.intPreOrderSime(dos,0) << endl;
+    cout << numeros.intPreOrderSime(tres, 0) << endl;
+
     
     
     
-    numerosS.isSymmetric();
+    
     
     return 0;
 }
