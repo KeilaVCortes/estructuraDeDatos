@@ -19,10 +19,12 @@ f) Visualizar todos los miembros de la familia que fallecieron antes de una fech
 determinada
 g) Visualizar todos los miembros familiares que aún se encuentran vivos
 
-*/
+*/   
+
+
 
 int main(){
-    
+    x   
     
     
     
