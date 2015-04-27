@@ -14,7 +14,7 @@ public:
     BinaryTree() {}
     virtual ~BinaryTree();
     
-    bool empty();
+    bool empty() const;
     
     void clear();
     void clear(BNode<T> * node);
@@ -69,33 +69,30 @@ public:
     int intPreOrderSime() const;
     int intPreOrderSime(BNode<T> * node, int nodos) const;
     bool sime2() const;
-    bool sime2(BNode<T> * node, bool sime) const;
+    bool sime2(BNode<T> * nodeA, BNode<T> * nodeB ) const;
 };
 
 template <class T>
 bool BinaryTree<T>::sime2() const
 {
-    sime2(root, false);
+    if (!empty())
+        sime2(root->getLeft(), root->getRight() );
+    else
+        return true;
 }
 
 template <class T>
-bool BinaryTree<T>::sime2(BNode<T> * node, bool sime) const
+bool BinaryTree<T>::sime2(BNode<T> * nodeA, BNode<T> * nodeB ) const
 {
-    std::cout << "1cout" << std::endl;
-    if (node) {
-        std::cout << "2cout" << std::endl;
-        if(node->getLeft() && node->getRight()){
-            std::cout << "3cout" << std::endl;
-            return sime2(node->getLeft(), true);
-            return sime2(node->getRight(), true);
-            //std::cout << sime << "hola" << std::endl;
-        }
-        else if (node->getLeft() || node->getRight()){
-            return false;
-            std::cout << "else" << std::endl;
-        }
+    if (!nodeA && !nodeB) return true;
+
+    if ((!nodeA && nodeB) || (nodeA && !nodeB)) return false;
+    
+    if ( sime2(nodeA->getLeft(), nodeB->getRight())) {
+        return sime2(nodeA->getRight(), nodeB->getLeft());
     }
-    return sime;
+    else
+        return false;
 }
 
 
@@ -137,7 +134,7 @@ BinaryTree<T>::~BinaryTree()
 }
 
 template <class T>
-bool BinaryTree<T>::empty()
+bool BinaryTree<T>::empty() const
 {
     return root == nullptr;
 }

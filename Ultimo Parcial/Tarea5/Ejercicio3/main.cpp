@@ -59,7 +59,7 @@ int main(){
     numerosS.insert(unoS, tresS);
     
     BNode<int> * cuatroS = new BNode<int>(4);
-   // numerosS.insert(dosS, cuatroS);
+    numerosS.insert(dosS, cuatroS);
     
     BNode<int> * cincoS = new BNode<int>(5);
     numerosS.insert(dosS, cincoS);

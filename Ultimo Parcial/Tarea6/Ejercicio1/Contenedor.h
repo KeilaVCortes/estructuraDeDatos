@@ -9,17 +9,55 @@ class Contenedor{
         std::string nombre;
         int numero;
         double costo;
-        list<Prenda> prendas;
+        std::list<Prenda> prendas;
     public:
-        void agregarPrenda(Prenda prenda);
         Contenedor() : Contenedor("", 0, 0){}
         Contenedor(std::string _nombre, double _costo, int _numero) : nombre(_nombre), costo(_costo), numero(_numero){}
-        std::string getNombre();
         
+        std::string getNombre();
+        int getNumero();
+        double getCosto();
+        void agregarPrenda(Prenda prenda);
+        void setCosto(double costo);
+        
+         friend std::ostream & operator << (std::ostream & os, const Contenedor & contenedor);
 };
 
-
+void Contenedor::setCosto(double costo){
+    this->costo = costo;
+}
 
 void Contenedor::agregarPrenda(Prenda prenda){
-    prendas->push_back(prenda);
+    prendas.push_back(prenda);
+}
+
+std::string Contenedor::getNombre(){
+    return nombre;
+}
+
+int Contenedor::getNumero(){
+    return numero;
+}
+/*
+double Contenedor::getCosto(){
+    for(int i  = 0; i < prendas.size() ; ++i ){
+        costo += prendas.at(i)->getCosto();
+    }
+    return costo;
+}
+*/
+
+double Contenedor::getCosto(){
+    for(auto mar: prendas){
+        costo += mar.getCosto();
+    }
+    return costo;
+}
+
+
+std::ostream & operator << (std::ostream & os,  const Contenedor & contenedor)
+{
+    os << contenedor.nombre << ", " << contenedor.numero << "(" << contenedor.costo << ")"  << std::endl;
+
+    return os;
 }
