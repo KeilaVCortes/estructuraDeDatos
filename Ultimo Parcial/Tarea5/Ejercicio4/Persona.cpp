@@ -4,26 +4,10 @@
 
 bool Persona::operator >(Persona & persona)
 {
-    if (apellidos > persona.fFallecimiento) {
-        
+    if (fFallecimiento > persona.fFallecimiento) {
         return true;
     }
-    else if (apellidos == persona.fFallecimiento) {
-    
-        if (nombre < persona.fNacimiento) {
-            return true;
-        }
-        else {
-            return false;
-        }
-    }
-    
     return false;
-}
-
-bool Persona::operator <(Persona & persona)
-{
-    return fFallecimiento < persona.fFallecimiento;
 }
 
 std::ostream & operator << (std::ostream & os,  const Persona & persona)
