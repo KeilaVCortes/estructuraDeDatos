@@ -47,9 +47,7 @@ int main(){
     BNode<int> * diez = new BNode<int>(10);
     numeros.insert(tres, diez);
     
-        BNode<int> * doce = new BNode<int>(12);
-    numeros.insert(cinco, doce);
-    
+
     
     BNode<int> * unoS = new BNode<int>(1);
     numerosS.insert(nullptr, unoS);
@@ -77,9 +75,9 @@ int main(){
 
     /* Mostrar el árbol en preOrder */
     std::cout << " ---- preOrder 1 dos----" << std::endl;
-    numerosS.preOrder(dosS);
+    numerosS.preOrder();
     std::cout << std::endl;
-
+/*
 
     std::cout << " ---- preOrder 1 tres----" << std::endl;
     numerosS.preOrder(tresS);
@@ -101,8 +99,25 @@ int main(){
     cout << numeros.intPreOrderSime(tres, 0) << endl;
 
     
+  */
+  
+    if (numerosS.sime2()){
+        cout << " es simetrico" << endl;
+    }
+    else{
+        cout << "No es Simetrico" << endl;
+    }
+    cout << numerosS.sime2() << endl;
     
     
+    
+    if (numeros.sime2()){
+        cout << " es simetrico" << endl;
+    }
+    else{
+        cout << "No es Simetrico" << endl;
+    }
+    cout << numeros.sime2() << endl;
     
     
     return 0;
