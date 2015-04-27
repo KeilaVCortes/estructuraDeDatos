@@ -59,7 +59,76 @@ public:
     int reflex(BNode<T> * node);
     int reflex();
     
+    
+    //bool isSymmetric();
+    //BNode<T> * copy(const BNode<T> * node);
+    bool operator==(const BinaryTree<T> & a) const;
+    
+    //BinaryTree<T> * copy();
+    //BNode<T> * copy(const BNode<T> * node);
+    int intPreOrderSime() const;
+    int intPreOrderSime(BNode<T> * node, int nodos) const;
+    bool sime2() const;
+    bool sime2(BNode<T> * node, bool sime) const;
 };
+
+template <class T>
+bool BinaryTree<T>::sime2() const
+{
+    sime2(root, false);
+}
+
+template <class T>
+bool BinaryTree<T>::sime2(BNode<T> * node, bool sime) const
+{
+    std::cout << "1cout" << std::endl;
+    if (node) {
+        std::cout << "2cout" << std::endl;
+        if(node->getLeft() && node->getRight()){
+            std::cout << "3cout" << std::endl;
+            return sime2(node->getLeft(), true);
+            return sime2(node->getRight(), true);
+            //std::cout << sime << "hola" << std::endl;
+        }
+        else if (node->getLeft() || node->getRight()){
+            return false;
+            std::cout << "else" << std::endl;
+        }
+    }
+    return sime;
+}
+
+
+
+template <class T>
+int BinaryTree<T>::intPreOrderSime() const
+{
+    intPreOrderSime(root, 0);
+}
+
+template <class T>
+int BinaryTree<T>::intPreOrderSime(BNode<T> * node, int nodos) const
+{
+    static int suma = 0;
+    static int l = 0;
+    static int r = 0;
+    bool sime;
+
+    if (node) {
+        
+        /* Procesar el nodo */
+        //return node->getInfo();
+         suma += node->getInfo();
+        //std::cout << *node << std::endl;
+        
+        /* Invocar a los hijos */
+        l = intPreOrderSime(node->getLeft(), nodos++);
+        r = intPreOrderSime(node->getRight(), nodos++);
+
+    }
+    return nodos;
+}
+
 
 template <class T>
 BinaryTree<T>::~BinaryTree()
@@ -365,5 +434,61 @@ int BinaryTree<T>::reflex()
     
     
 }
+
+
+
+
+
+/*
+
+
+template <class T>
+BNode<T> * BinaryTree<T>::copy(const BNode<T> * node){
+    if (node){
+        BNode<T> * output = new BNode<T>();
+        output->setInfo(node->getInfo());
+        output->setRight(copy(node->getRight()));
+        output->setLeft(copy(node->getLeft()));
+        return output;
+    }
+    return nullptr; 
+}
+
+
+template <class T>
+bool BinaryTree<T>::isSymmetric(){
+    BinaryTree<T> * reflection = this->copy();
+    reflection->reflect();
+    bool output = (*this == *reflection);
+    delete reflection;
+    return output;
+}
+
+
+template <class T>
+bool BinaryTree<T>::operator == (const BinaryTree<T> & b) const{
+    return equals(this, &b);
+}
+
+template <class T>
+BinaryTree<T> * BinaryTree<T>::copy(){
+    BinaryTree<T> * output = new BinaryTree<T>();
+    BNode<T> * node = new BNode<T>();
+    node = copy(this->getRoot());
+    output->insert(nullptr, node);
+    return output;
+}
+
+template <class T>
+BNode<T> * BinaryTree<T>::copy(const BNode<T> * node){
+    if (node){
+        BNode<T> * output = new BNode<T>();
+        output->setInfo(node->getInfo());
+        output->setRight(copy(node->getRight()));
+        output->setLeft(copy(node->getLeft()));
+        return output;
+    }
+    return nullptr; 
+}*/
 
 #endif

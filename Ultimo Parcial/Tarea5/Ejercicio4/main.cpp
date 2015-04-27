@@ -60,6 +60,7 @@ int main(){
     BNode<Persona> * cinco = new BNode<Persona>(hermana);
     familiaRdz.insert(dos, cinco);
     
+    
 
       /* Mostrar el árbol en preOrder */
     std::cout << " ---- Su familia Sr Rodriguez! ----" << std::endl;
