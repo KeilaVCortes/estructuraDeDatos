@@ -14,3 +14,18 @@ La aplicación debe ser capaz de generar los siguientes resultados:
 • Quién es el estudiante más estable en sus relaciones
 
 */
+
+#include <iostream>
+#include <string>
+#include "Persona.h"
+#include <list>
+using namespace std;
+
+
+int main(){
+    list<Persona> personas;
+    
+    
+    
+    return 0;
+}
