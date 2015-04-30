@@ -27,7 +27,7 @@ double Prenda::getCosto(){
 
 std::ostream & operator << (std::ostream & os,  const Prenda & prenda)
 {
-    os << prenda.nombre << " "  << "(" << prenda.cantidad << ")" << prenda.costo << "\n   " << prenda.descripcion << std::endl;
+    os << prenda.nombre << " "  << "(" << prenda.cantidad << ")" <<  "$" << prenda.costo << "\n   " << prenda.descripcion << std::endl;
     
     return os;
 }

@@ -95,7 +95,9 @@ int main(){
                     contenedor.agregarPrenda(prenda);
                 }
                 cout << contenedor.getCosto() << endl;
-                contenedor.setCosto(contenedor.getCosto());
+                double x;
+                x = contenedor.getCosto();
+                contenedor.setCosto(x);
                 if(pila1.size() < 20){
                     pila1.push(contenedor);
                 }else if(pila1.size() > 20 && pila2.size() < 20 ){
@@ -114,7 +116,8 @@ int main(){
                 cin >> opi;
                 if( opi == 1){
                     while( !pila1.empty()){
-                        cout << pila1.top() << endl;    
+                        cout << pila1.top() << endl;
+                        pila1.top().imprimeLista();
                         pila1.pop();
                     }
                     
@@ -137,7 +140,10 @@ int main(){
             case 3:
        
                 while( !pila1.empty()){
-                    cout << pila1.top() << endl;    
+                    cout << pila1.top() << endl;   
+                    for(int i = 0; i < pila1.top().getSizeLista() ; ++i){
+                        pila1.top().imprimeLista();
+                    }
                     pila1.pop();
                 }
     

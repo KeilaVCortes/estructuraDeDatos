@@ -19,6 +19,9 @@ class Contenedor{
         double getCosto();
         void agregarPrenda(Prenda prenda);
         void setCosto(double costo);
+        int getSizeLista();
+        void imprimeLista();
+        std::list<Prenda> getLista();
         
          friend std::ostream & operator << (std::ostream & os, const Contenedor & contenedor);
 };
@@ -60,4 +63,20 @@ std::ostream & operator << (std::ostream & os,  const Contenedor & contenedor)
     os << contenedor.nombre << ", " << contenedor.numero << "(" << contenedor.costo << ")"  << std::endl;
 
     return os;
+}
+
+
+int Contenedor::getSizeLista(){
+    prendas.size();
+}
+
+void Contenedor::imprimeLista(){
+    for(auto mar : prendas){
+        std::cout << mar << std::endl;    
+    }
+    
+}
+
+std::list<Prenda> Contenedor::getLista(){
+    return prendas;
 }
