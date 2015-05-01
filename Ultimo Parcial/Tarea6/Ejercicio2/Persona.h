@@ -46,11 +46,11 @@ public:
 };
 
 void Persona::setTiempoSoledad(int tiempo){
-    this->tiempoSoledad = tiempo;
+    this->tiempoSoledad += tiempo;
 }
 
 void Persona::setTiempoRelacion(int tiempo){
-    this->tiempoRelacion = tiempo;
+    this->tiempoRelacion += tiempo;
 }
 
 int Persona::getTiempoRelacion(){
