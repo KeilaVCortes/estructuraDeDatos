@@ -21,6 +21,9 @@ La aplicación debe ser capaz de generar los siguientes resultados:
 #include <list>
 using namespace std;
 
+void navega(Persona persona);
+
+
 list<Persona> personas;
     
 int main(){
@@ -40,7 +43,7 @@ int main(){
         
         
         
-        validaPersona(persona);
+        //validaPersona(persona);
     
         
         
@@ -76,7 +79,7 @@ void tienesUnNuevoAmigo(string nombre, string apellido){
 }
 
 
-void navega(persona){
+void navega(Persona persona){
      int whilo = 0;
     while(whilo != 666){
         cout << "1. Eres una persona nueva a analizar \n2. Tienes un nuevo amigo" << endl;
