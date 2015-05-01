@@ -67,14 +67,13 @@ std::ostream & operator << (std::ostream & os,  const Contenedor & contenedor)
 
 
 int Contenedor::getSizeLista(){
-    prendas.size();
+    return prendas.size();
 }
 
 void Contenedor::imprimeLista(){
     for(auto mar : prendas){
         std::cout << mar << std::endl;    
     }
-    
 }
 
 std::list<Prenda> Contenedor::getLista(){

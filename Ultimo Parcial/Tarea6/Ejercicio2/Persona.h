@@ -22,7 +22,9 @@ public:
     Persona(std::string _nombre, std::string _apellidos , int _tiempoRelacion, int _tiempoSoledad) : nombre(_nombre), apellidos(_apellidos), tiempoRelacion(_tiempoRelacion), tiempoSoledad(_tiempoSoledad){}
     
     int getTiempoRelacion();
+    void setTiempoRelacion(int tiempo);
     int getTiempoSoledad();
+    void setTiempoSoledad(int tiempo);
     std::string getNombre();
     std::string getApellido();
     Persona relacionMasEstable();
@@ -43,6 +45,13 @@ public:
     
 };
 
+void Persona::setTiempoSoledad(int tiempo){
+    this->tiempoSoledad = tiempo;
+}
+
+void Persona::setTiempoRelacion(int tiempo){
+    this->tiempoRelacion = tiempo;
+}
 
 int Persona::getTiempoRelacion(){
     return tiempoRelacion;
