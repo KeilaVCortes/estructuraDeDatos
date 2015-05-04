@@ -101,7 +101,7 @@ void navega(Persona persona){
     while(whilo != 666){
         cout << "1. Eres una persona nueva a analizar \n2. Tienes un nuevo amigo" << endl;
         //cout << "3.- Quieres saber tus porcentajes de tiempo (Solito o acompañado)" << endl;
-        //cout << "5. Nominaciones" << endl;
+        cout << "5. Nominaciones" << endl;
         cout << "6. Salir" << endl;
         int op;
         cin >> op;
@@ -188,6 +188,19 @@ void navega(Persona persona){
                 
                 cout << "porcentaje de relacion: " << amigo.calculaTiempoRelacion(amigo)<< endl;
                 cout << "Porcentaje soledad: " << amigo.calculaTiempoSoledad(amigo) << endl;
+            }
+            break;
+            
+            case 5:{
+                int elTiempoMasAmoroso = 0;
+                Persona elMasAmoroso;
+                for(auto x : personas){
+                    if(x.getTiempoRelacion() > elTiempoMasAmoroso){
+                        elMasAmoroso = x; 
+                    }
+                }
+                cout << "El mas amoroso es: " << endl;
+                cout << elMasAmoroso.getNombre() << endl;
             }
             break;
             
