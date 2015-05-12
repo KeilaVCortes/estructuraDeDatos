@@ -26,6 +26,9 @@ public:
 
     bool complete();
 
+    int getSizeLista();
+    int getSizeListaN();
+
     void addVertex(Vertex<V, E> * vertex);
     void addEdge(Vertex<V, E> * source, Vertex<V, E> * target, const E & info);
     void removeEdge(Vertex<V, E> * source, Vertex<V, E> * target, const E & info);
@@ -34,6 +37,15 @@ public:
     friend std::ostream & operator<<(std::ostream & os, const Graph<Vn, En> & graph);
 };
 
+template <class V, class E>
+int Graph<V, E>::getSizeLista(){
+    return edges.size();
+}
+
+template <class V, class E>
+int Graph<V, E>::getSizeListaN(){
+    return nodes.size();
+}
 
 template <class V, class E>
 bool Graph<V, E>::complete(){
@@ -42,7 +54,7 @@ bool Graph<V, E>::complete(){
   int verdad;
   for (auto v : nodes) {
     for (auto y : nodes){
-      if(v->getTarget() == y){
+      if(v->gesizeLista() == nodes.getSizeListaN() ){
         verdad ++;
       }
       tam ++;
