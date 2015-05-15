@@ -2,10 +2,12 @@
 #include <iostream>
 #include <string>
 #include "LinkedList.h"
+#include "OrdenamientoGenerico.h"
 
 using namespace std;
 
 int acomoda(int N, int M, int K);
+void encuentra(int N, int M, int K, int P);
 LinkedList<Libro> * libros = new LinkedList<Libro>();
 
 
@@ -13,48 +15,71 @@ int main(){
 
 
   Libro librosA[100];
-  lobrosA[0] = libro1;
-  lobrosA[1] = libro2;
-  lobrosA[2] = libro3;
-  lobrosA[3] = libro4;
-  lobrosA[4] = libro5;
-  lobrosA[5] = libro6;
-  lobrosA[6] = libro7;
-  lobrosA[7] = libro8;
-  lobrosA[8] = libro9;
-  lobrosA[9] = libro10;
+
+
   /*
    * Importante
    * Ingresar los datos ordenadamente!!!
    */
 
-   //Ordenamiento<Libro>::ordenar(librosA,10, [](Libro a, Libro b){ if (a.getAltura() > b.getAltura()) return true; return false;  }, Ordenamiento<Libro>::burbuja);
 
   Libro libro1("A", 50, 3);
-  libros->insertBack(libro1);
   Libro libro2("B", 20, 5);
-  libros->insertBack(libro2);
   Libro libro3("C", 58, 5);
-  libros->insertBack(libro3);
   Libro libro4("D", 98, 7);
-  libros->insertBack(libro4);
   Libro libro5("E", 73, 8);
-  libros->insertBack(libro5);
   Libro libro6("A", 50, 8);
-  libros->insertBack(libro6);
   Libro libro7("B", 20, 9);
-  libros->insertBack(libro7);
   Libro libro8("C", 58, 10);
-  libros->insertBack(libro8);
   Libro libro9("D", 98, 14);
-  libros->insertBack(libro9);
   Libro libro10("E", 73, 20);
+/*
+  librosA[0] = libro1;
+  librosA[1] = libro2;
+  librosA[2] = libro3;
+  librosA[3] = libro4;
+  librosA[4] = libro5;
+  librosA[5] = libro6;
+  librosA[6] = libro7;
+  librosA[7] = libro8;
+  librosA[8] = libro9;
+  librosA[9] = libro10;
+
+  Ordenamiento<Libro>::seleccion(librosA,10, [](Libro a, Libro b){ if (a.getAltura() > b.getAltura()) return true; return false;  }, Ordenamiento<Libro>::burbuja);
+*/
+  libros->insertBack(libro1);
+  libros->insertBack(libro2);
+  libros->insertBack(libro3);
+  libros->insertBack(libro4);
+  libros->insertBack(libro5);
+  libros->insertBack(libro6);
+  libros->insertBack(libro7);
+  libros->insertBack(libro8);
+  libros->insertBack(libro9);
   libros->insertBack(libro10);
 
-
   cout << "Nivel de prolijidad: " << acomoda(3,10,4) << endl;
+  encuentra(3,10,4,3);
+  encuentra(3,10,4,9);
 
 }
+
+/*
+void encuentra(int N, int M, int K, int P){
+  bool registrado = false;
+  for (int i = 0; i < libros->size(); ++i){
+     if(libros->at(i)->getInfo.getPos == P){
+       registrado = true;
+       cout << libros->at(i)->getInfo().getNombre() << libros->at(i)->getInfo().getPaginas() << libros->at(i)->getInfo().getAltura();
+     }
+ }
+ if(!registrado){
+     cout << "no existe en esa posicion" << endl;
+ }
+
+}
+*/
+
 
 int acomoda(int N, int M, int K){
   int prolijidad = 0;
