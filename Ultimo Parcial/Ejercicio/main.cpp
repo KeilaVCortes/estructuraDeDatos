@@ -18,7 +18,7 @@ int main(){
    * Ingresar los datos ordenadamente!!!
    */
 
-   //if (parametro == 2) Ordenamiento<Libro>::ordenar(libros,3, [](Libro a, Libro b){ if (a.getanio() > b.getanio()) return true; return false;  }, Ordenamiento<Libro>::burbuja);
+   //Ordenamiento<Libro>::ordenar(libros,3, [](Libro a, Libro b){ if (a.getanio() > b.getanio()) return true; return false;  }, Ordenamiento<Libro>::burbuja);
 
   Libro libro1("A", 50, 3);
   libros->insertBack(libro1);
