@@ -1,5 +1,8 @@
 /*
-
+ * Margot Duek
+ * Ejercicio 1
+ * Gráfos
+ * Examen final
  */
 
  #include <iostream>

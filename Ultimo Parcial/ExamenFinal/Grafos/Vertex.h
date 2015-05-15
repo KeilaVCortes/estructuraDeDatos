@@ -1,10 +1,3 @@
-//
-//  Vertex.h
-//  Graph
-//
-//  Created by Vicente Cubells Nonell on 23/04/15.
-//  Copyright (c) 2015 Vicente Cubells Nonell. All rights reserved.
-//
 
 #ifndef Graph_Vertex_h
 #define Graph_Vertex_h
@@ -16,24 +9,24 @@ template <class V, class E>
 class Vertex {
     V info;
     std::vector< Edge<V, E> * > edges;
-    
+
 public:
     Vertex() { }
     Vertex(V _info) : info(_info) { }
-    
+
     ~Vertex();
-    
+
     V getInfo() const;
     void setInfo(const V &);
-    
+
     std::vector< Edge<V, E> * > * getEdges();
-    
+
     void addEdge(Edge<V, E> *);
-    
+
     void removeEdge(Edge<V, E> *);
-    
+
     bool operator != (Vertex<V, E> &) const;
-    
+
     template <class Vn, class En>
     friend std::ostream & operator <<(std::ostream & , const Vertex<Vn, En> &);
 };
@@ -47,7 +40,7 @@ Vertex<V, E>::~Vertex()
     {
         delete e;
     }
-    
+
     edges.clear();
 }
 
@@ -92,11 +85,11 @@ template <class V, class E>
 std::ostream & operator <<(std::ostream & os , const  Vertex<V, E>  & vertex)
 {
     os << "Vertex: " << vertex.info << std::endl;
-    
+
     for (auto e : vertex.edges) {
         os << *e << std::endl;
     }
-    
+
     return os;
 }
 
