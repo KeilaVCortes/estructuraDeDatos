@@ -12,13 +12,23 @@ LinkedList<Libro> * libros = new LinkedList<Libro>();
 int main(){
 
 
-
+  Libro librosA[100];
+  lobrosA[0] = libro1;
+  lobrosA[1] = libro2;
+  lobrosA[2] = libro3;
+  lobrosA[3] = libro4;
+  lobrosA[4] = libro5;
+  lobrosA[5] = libro6;
+  lobrosA[6] = libro7;
+  lobrosA[7] = libro8;
+  lobrosA[8] = libro9;
+  lobrosA[9] = libro10;
   /*
    * Importante
    * Ingresar los datos ordenadamente!!!
    */
 
-   //Ordenamiento<Libro>::ordenar(libros,3, [](Libro a, Libro b){ if (a.getanio() > b.getanio()) return true; return false;  }, Ordenamiento<Libro>::burbuja);
+   //Ordenamiento<Libro>::ordenar(librosA,10, [](Libro a, Libro b){ if (a.getAltura() > b.getAltura()) return true; return false;  }, Ordenamiento<Libro>::burbuja);
 
   Libro libro1("A", 50, 3);
   libros->insertBack(libro1);
