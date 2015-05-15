@@ -59,16 +59,17 @@ int main(){
   libros->insertBack(libro10);
 
   cout << "Nivel de prolijidad: " << acomoda(3,10,4) << endl;
-  encuentra(3,10,4,3);
-  encuentra(3,10,4,9);
+  //encuentra(3,10,4,3);
+  //encuentra(3,10,4,9);
 
+  cout << libros->at(3)->getInfo().getNombre() << "\n" << libros->at(3)->getInfo().getPaginas() << "\n" << libros->at(3)->getInfo().getAltura() << endl;
 }
 
 /*
 void encuentra(int N, int M, int K, int P){
   bool registrado = false;
   for (int i = 0; i < libros->size(); ++i){
-     if(libros->at(i)->getInfo.getPos == P){
+     if(libros->at(i)->getInfo() == P){
        registrado = true;
        cout << libros->at(i)->getInfo().getNombre() << libros->at(i)->getInfo().getPaginas() << libros->at(i)->getInfo().getAltura();
      }
@@ -78,7 +79,8 @@ void encuentra(int N, int M, int K, int P){
  }
 
 }
-*/
+**/
+
 
 
 int acomoda(int N, int M, int K){
