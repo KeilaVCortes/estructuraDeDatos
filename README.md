@@ -1,7 +1,7 @@
 # estructuraDeDatos
 clase de estructura de datos en c++ 
 
-En esste repositorio se encuentran ejercicios sobre:
+En este repositorio se encuentran ejercicios sobre:
    
     - Sobrecarga de operadores
     - Clases genericas
